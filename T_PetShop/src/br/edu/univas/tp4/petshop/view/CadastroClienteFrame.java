@@ -13,7 +13,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import br.edu.univas.tp4.petshop.controller.ButtonListener;
+import br.edu.univas.tp4.petshop.controller.SalvarSairButtonListener;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class CadastroClienteFrame extends JFrame{
@@ -28,8 +28,6 @@ public class CadastroClienteFrame extends JFrame{
 	public CadastroClienteFrame(SearchController controller){
 		super("Informações do Cliente");
 		this.controller = controller;
-		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		initialize();
 		pack();
@@ -52,10 +50,10 @@ public class CadastroClienteFrame extends JFrame{
 	private ButtonPanelCadastro getButtonPanel() {
 		if(buttonPanel == null){
 			buttonPanel = new ButtonPanelCadastro();
-			buttonPanel.addButtonsListener(new ButtonListener() {
+			buttonPanel.addButtonsListener(new SalvarSairButtonListener() {
 				
 				@Override
-				public void salvarPerfomed() {
+				public void salvarPerformed() {
 					salvarClicked();
 				}
 				
@@ -73,7 +71,7 @@ public class CadastroClienteFrame extends JFrame{
 	}
 	
 	public void cancelClicked(){
-		System.exit(0);
+		//TODO:implementar
 	}
 	
 	

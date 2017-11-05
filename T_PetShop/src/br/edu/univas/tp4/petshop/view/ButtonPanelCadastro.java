@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import br.edu.univas.tp4.petshop.controller.ButtonListener;
+import br.edu.univas.tp4.petshop.controller.SalvarSairButtonListener;
 
 public class ButtonPanelCadastro extends JPanel{
 
@@ -17,7 +17,7 @@ public class ButtonPanelCadastro extends JPanel{
 	private JButton salvarButton;
 	private JButton cancelButton;
 	
-	private ArrayList<ButtonListener> listeners = new ArrayList<>();
+	private ArrayList<SalvarSairButtonListener> listeners = new ArrayList<>();
 
 	public ButtonPanelCadastro(){
 		initialize();
@@ -59,18 +59,18 @@ public class ButtonPanelCadastro extends JPanel{
 		return cancelButton;
 	}
 	
-	public void addButtonsListener(ButtonListener listener){
+	public void addButtonsListener(SalvarSairButtonListener listener){
 		listeners.add(listener);
 	}
 	
 	private void salvarClicked(){
-		for(ButtonListener listener : listeners){
-			listener.salvarPerfomed();
+		for(SalvarSairButtonListener listener : listeners){
+			listener.salvarPerformed();
 		}
 	}
 	
 	private void cancelClicked(){
-		for(ButtonListener listener : listeners){
+		for(SalvarSairButtonListener listener : listeners){
 			listener.CancelPerformed();
 		}
 	}
