@@ -1,18 +1,20 @@
 package br.edu.univas.tp4.petshop.controller;
 
-import br.edu.univas.tp4.petshop.view.CadastroClienteFrame;
+import br.edu.univas.tp4.petshop.view.CadastroFuncionarioFrame;
+import br.edu.univas.tp4.petshop.view.EditaFuncionarioFrame;
 import br.edu.univas.tp4.petshop.view.TelaPrincipalFrame;
 
 public class SearchController {
 	
-	private CadastroClienteFrame cadastroClienteFrame;
+	private CadastroFuncionarioFrame cadastroFuncionarioFrame;
 	private TelaPrincipalFrame telaPrincipalFrame;
+	private EditaFuncionarioFrame editaFuncionarioFrame;
 	
 	public SearchController(){
-		cadastroClienteFrame = new CadastroClienteFrame(this);
+		telaPrincipalFrame = new TelaPrincipalFrame(this);
 	}
 	
 	public void initialize(){
-		cadastroClienteFrame.setVisible(true);
+		telaPrincipalFrame.setVisible(true);
 	}
 }

@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class CadastroClientePanel extends JPanel{
+public class CadastroFuncionarioPanel extends JPanel{
 
 	private static final long serialVersionUID = -5083485119067419418L;
 	
@@ -59,7 +59,7 @@ public class CadastroClientePanel extends JPanel{
 	private GridBagConstraints labelEmailConstraints;
 	private GridBagConstraints textEmailConstraints;
 	
-	public CadastroClientePanel(){
+	public CadastroFuncionarioPanel(){
 			initialize();
 	}
 	

@@ -16,22 +16,18 @@ import javax.swing.border.EmptyBorder;
 import br.edu.univas.tp4.petshop.controller.SalvarSairButtonListener;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
-public class CadastroClienteFrame extends JFrame{
+public class CadastroFuncionarioFrame extends JFrame{
 	private static final long serialVersionUID = -4221091737850320808L;
 	
 	private SearchController controller;
 	
-	private CadastroClientePanel clientePanel;
+	private CadastroFuncionarioPanel clientePanel;
 	private ButtonPanelCadastro buttonPanel; 
 	
 	//Construtor
-	public CadastroClienteFrame(SearchController controller){
+	public CadastroFuncionarioFrame(SearchController controller){
 		super("Informações do Cliente");
-		this.controller = controller;
-		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		
 		
 		initialize();
 		pack();
@@ -40,13 +36,13 @@ public class CadastroClienteFrame extends JFrame{
 	}
 	
 	private void initialize(){
-		add(getClientePanel(),BorderLayout.CENTER);
+		add(getFuncionarioPanel(),BorderLayout.WEST);
 		add(getButtonPanel(),BorderLayout.PAGE_END);
 	}
 
-	private CadastroClientePanel getClientePanel() {
+	private CadastroFuncionarioPanel getFuncionarioPanel() {
 		if(clientePanel == null){
-			clientePanel = new CadastroClientePanel();
+			clientePanel = new CadastroFuncionarioPanel();
 		}
 		return clientePanel;
 	}
@@ -62,7 +58,7 @@ public class CadastroClienteFrame extends JFrame{
 				}
 				
 				@Override
-				public void CancelPerformed() {
+				public void cancelPerformed() {
 					cancelClicked();
 				}
 			});
@@ -71,19 +67,10 @@ public class CadastroClienteFrame extends JFrame{
 	}
 	
 	public void salvarClicked(){
-		JOptionPane.showMessageDialog(this, "Salvo com sucesso");
+		//TODO : Implementar
 	}
 	
 	public void cancelClicked(){
 		//TODO:implementar
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

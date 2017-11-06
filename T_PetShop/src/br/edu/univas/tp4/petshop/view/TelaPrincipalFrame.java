@@ -21,10 +21,7 @@ public class TelaPrincipalFrame extends JFrame{
 		super("Petshop");
 		this.controller = controller;
 		
-		
-		
 		initialize();
-	//	pack();
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setSize(400,500);
@@ -66,8 +63,8 @@ public class TelaPrincipalFrame extends JFrame{
 				}
 				
 				@Override
-				public void clientePerformed() {
-					clienteClicked();
+				public void funcionarioPerformed() {
+					funcionarioClicked();
 					
 				}
 			});
@@ -75,7 +72,7 @@ public class TelaPrincipalFrame extends JFrame{
 		return buttonPrincipal;
 	}
 	
-	public void clienteClicked(){
+	public void funcionarioClicked(){
 		//TODO:implementar
 	}
 	

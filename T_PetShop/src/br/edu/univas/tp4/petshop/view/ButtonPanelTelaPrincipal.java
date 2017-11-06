@@ -51,12 +51,12 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 		if(clientesButton == null){
 			clientesButton = new JButton();
 			clientesButton.setPreferredSize(new Dimension(110, 30));
-			clientesButton.setText("Clientes");
+			clientesButton.setText("Funcionários");
 			clientesButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					clienteClicked();
+					funcionarioClicked();
 					
 				}
 			});
@@ -158,9 +158,9 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 		listeners.add(listener);
 	}
 	
-	public void clienteClicked(){
+	public void funcionarioClicked(){
 		for(PrincipalButtonListener listener : listeners){
-			listener.clientePerformed();
+			listener.funcionarioPerformed();
 		}
 	}
 	
