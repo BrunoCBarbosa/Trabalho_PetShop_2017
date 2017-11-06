@@ -9,10 +9,10 @@ public class SearchController {
 	private TelaPrincipalFrame telaPrincipalFrame;
 	
 	public SearchController(){
-		telaPrincipalFrame = new TelaPrincipalFrame(this);
+		cadastroClienteFrame = new CadastroClienteFrame(this);
 	}
 	
 	public void initialize(){
-		telaPrincipalFrame.setVisible(true);
+		cadastroClienteFrame.setVisible(true);
 	}
 }

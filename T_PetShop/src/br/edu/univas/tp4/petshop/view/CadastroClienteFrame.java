@@ -29,6 +29,10 @@ public class CadastroClienteFrame extends JFrame{
 		super("Informações do Cliente");
 		this.controller = controller;
 		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		
+		
 		initialize();
 		pack();
 		setLocationRelativeTo(null);

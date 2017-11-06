@@ -21,10 +21,10 @@ public class TelaPrincipalFrame extends JFrame{
 		super("Petshop");
 		this.controller = controller;
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
 		
 		initialize();
-		pack();
+	//	pack();
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setSize(400,500);
@@ -32,7 +32,7 @@ public class TelaPrincipalFrame extends JFrame{
 	
 	private void initialize(){
 		add(getPrincipalPanel(),BorderLayout.NORTH);
-		add(getButtonPrincipal(),BorderLayout.PAGE_END);
+		add(getButtonPrincipal(),BorderLayout.CENTER);
 	}
 
 	private TelaPrincipalPanel getPrincipalPanel() {
