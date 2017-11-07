@@ -11,10 +11,10 @@ public class SearchController {
 	private EditaFuncionarioFrame editaFuncionarioFrame;
 	
 	public SearchController(){
-		telaPrincipalFrame = new TelaPrincipalFrame(this);
+		editaFuncionarioFrame = new EditaFuncionarioFrame(this);
 	}
 	
 	public void initialize(){
-		telaPrincipalFrame.setVisible(true);
+		editaFuncionarioFrame.setVisible(true);
 	}
 }

@@ -61,7 +61,7 @@ public class PesquisarPanel extends JPanel {
 			textPesquisarConstraints.gridx = 0;
 			textPesquisarConstraints.gridy = 0;
 			textPesquisarConstraints.ipadx = 100;
-			textPesquisarConstraints.weightx = 1.0;
+		//	textPesquisarConstraints.weightx = 1.0;
 			textPesquisarConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return textPesquisarConstraints;

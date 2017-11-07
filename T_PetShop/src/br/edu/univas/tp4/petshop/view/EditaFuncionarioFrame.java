@@ -16,7 +16,7 @@ public class EditaFuncionarioFrame extends JFrame{
 	private SearchController controller;
 	
 	private PesquisarPanel pesquisarPanel;
-	private CadastroFuncionarioPanel editaPanel;
+	private CadastroPessoaPanel editaPanel;
 	private ButtonPanelEditaFuncionario buttonPanel;
 	
 	//CONSTRUCTOR
@@ -25,7 +25,7 @@ public class EditaFuncionarioFrame extends JFrame{
 		this.controller = controller;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		initialize();
-		pack();
+		setSize(700,650);
 		setLocationRelativeTo(null);
 		setResizable(false);
 	}
@@ -43,9 +43,9 @@ public class EditaFuncionarioFrame extends JFrame{
 		return pesquisarPanel;
 	}
 
-	private CadastroFuncionarioPanel getEditaPanel() {
+	private CadastroPessoaPanel getEditaPanel() {
 		if(editaPanel == null){
-			editaPanel = new CadastroFuncionarioPanel();
+			editaPanel = new CadastroPessoaPanel();
 		}
 		return editaPanel;
 	}

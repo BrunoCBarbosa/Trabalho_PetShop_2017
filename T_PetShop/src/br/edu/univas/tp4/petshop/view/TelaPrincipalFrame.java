@@ -20,11 +20,12 @@ public class TelaPrincipalFrame extends JFrame{
 	public TelaPrincipalFrame(SearchController controller){
 		super("Petshop");
 		this.controller = controller;
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		initialize();
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setSize(400,500);
+		setSize(700,650);
 	}
 	
 	private void initialize(){

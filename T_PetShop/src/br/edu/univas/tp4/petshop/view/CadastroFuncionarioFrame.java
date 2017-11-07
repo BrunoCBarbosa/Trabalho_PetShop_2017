@@ -21,7 +21,7 @@ public class CadastroFuncionarioFrame extends JFrame{
 	
 	private SearchController controller;
 	
-	private CadastroFuncionarioPanel clientePanel;
+	private CadastroPessoaPanel clientePanel;
 	private ButtonPanelCadastro buttonPanel; 
 	
 	//Construtor
@@ -30,7 +30,7 @@ public class CadastroFuncionarioFrame extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		initialize();
-		pack();
+		setSize(700,650);
 		setLocationRelativeTo(null);
 		setResizable(false);
 	}
@@ -40,9 +40,9 @@ public class CadastroFuncionarioFrame extends JFrame{
 		add(getButtonPanel(),BorderLayout.PAGE_END);
 	}
 
-	private CadastroFuncionarioPanel getFuncionarioPanel() {
+	private CadastroPessoaPanel getFuncionarioPanel() {
 		if(clientePanel == null){
-			clientePanel = new CadastroFuncionarioPanel();
+			clientePanel = new CadastroPessoaPanel();
 		}
 		return clientePanel;
 	}

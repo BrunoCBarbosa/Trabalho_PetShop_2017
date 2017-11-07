@@ -1,31 +1,35 @@
 package br.edu.univas.tp4.petshop.view;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.text.ParseException;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
-public class CadastroFuncionarioPanel extends JPanel{
+public class CadastroPessoaPanel extends JPanel{
 
 	private static final long serialVersionUID = -5083485119067419418L;
 	
 	private JLabel labelNome;
 	private JTextField textNome;
 	private JLabel labelNascimento;
-	private JTextField textNascimento;
+	private JFormattedTextField textNascimento;
 	private JLabel labelSexo;
 	private JRadioButton buttonMasculino;
 	private JRadioButton buttonFeminino;
 	private ButtonGroup buttonGroup;
 	private JLabel labelCpf;
-	private JTextField textCpf;
+	private JFormattedTextField textCpf;
 	private JLabel labelRg;
-	private JTextField textRg;
+	private JFormattedTextField textRg;
 	private JLabel labelEndereco;
 	private JTextField textEndereco;
 	private JLabel labelBairro;
@@ -33,7 +37,7 @@ public class CadastroFuncionarioPanel extends JPanel{
 	private JLabel labelCidade;
 	private JTextField textCidade;
 	private JLabel labelTel;
-	private JTextField textTel;
+	private JFormattedTextField textTel;
 	private JLabel labelEmail;
 	private JTextField textEmail;
 	
@@ -59,13 +63,23 @@ public class CadastroFuncionarioPanel extends JPanel{
 	private GridBagConstraints labelEmailConstraints;
 	private GridBagConstraints textEmailConstraints;
 	
-	public CadastroFuncionarioPanel(){
+	private MaskFormatter mascaraData;
+	private MaskFormatter mascaraCpf;
+	private MaskFormatter mascaraRg;
+	private MaskFormatter mascaraTel;
+
+	
+	public CadastroPessoaPanel(){
 			initialize();
 	}
 	
 	private void initialize(){
 		setLayout(new GridBagLayout());
 		getButtonGroup();
+		getMascaraData();
+		getMascaraCpf();
+		getMascaraRG();
+		getMascaraTel();
 		
 		add(getLabelNome(),getLabelNomeConstraints());
 		add(getTextNome(),getTextNomeConstraints());
@@ -117,13 +131,29 @@ public class CadastroFuncionarioPanel extends JPanel{
 		return labelNascimento;
 	}
 
-	private JTextField getTextNascimento() {
+	private JFormattedTextField getTextNascimento() {
 		if(textNascimento == null){
-			textNascimento = new JTextField();
-			textNascimento.setColumns(10);
+			textNascimento = new JFormattedTextField(mascaraData);
+			textNascimento.setPreferredSize(new Dimension(1, 20));
+			
 		}
 		return textNascimento;
 	}
+	
+	private MaskFormatter getMascaraData(){
+		if(mascaraData == null){
+			try{
+			mascaraData = new MaskFormatter("##/##/####");
+			mascaraData.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraData;
+	}
+	
 
 	/*=============== Sexo ================*/
 	private JLabel getLabelSexo() {
@@ -172,10 +202,24 @@ public class CadastroFuncionarioPanel extends JPanel{
 
 	private JTextField getTextCpf() {
 		if(textCpf== null){
-			textCpf= new JTextField();
-			textCpf.setColumns(10);
+			textCpf= new JFormattedTextField(mascaraCpf);
+			textCpf.setPreferredSize(new Dimension(1, 20));
 		}
 		return textCpf;
+	}
+	
+	private MaskFormatter getMascaraCpf(){
+		if(mascaraCpf == null){
+			try{
+			mascaraCpf = new MaskFormatter("###.###.###-##");
+			mascaraCpf.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraCpf;
 	}
 
 	/*=============== RG ================*/
@@ -187,12 +231,26 @@ public class CadastroFuncionarioPanel extends JPanel{
 		return labelRg;
 	}
 
-	private JTextField getTextRg() {
+	private JFormattedTextField getTextRg() {
 		if(textRg== null){
-			textRg= new JTextField();
-			textRg.setColumns(10);
+			textRg= new JFormattedTextField(mascaraRg);
+			textRg.setPreferredSize(new Dimension(1, 20));
 		}
 		return textRg;
+	}
+	
+	private MaskFormatter getMascaraRG(){
+		if(mascaraRg== null){
+			try{
+			mascaraRg= new MaskFormatter("##.###.###");
+			mascaraRg.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraRg;
 	}
 
 	/*=============== ENDEREÇO ================*/
@@ -255,12 +313,26 @@ public class CadastroFuncionarioPanel extends JPanel{
 		return labelTel;
 	}
 
-	private JTextField getTextTel() {
+	private JFormattedTextField getTextTel() {
 		if(textTel == null){
-			textTel= new JTextField();
-			textTel.setColumns(10);
+			textTel= new JFormattedTextField(mascaraTel);
+			textTel.setPreferredSize(new Dimension(1, 20));
 		}
 		return textTel;
+	}
+	
+	private MaskFormatter getMascaraTel(){
+		if(mascaraTel == null){
+			try{
+			mascaraTel = new MaskFormatter("(##)####-####");
+			mascaraTel.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraTel;
 	}
 
 	/*=============== EMAIL ================*/
@@ -319,7 +391,7 @@ public class CadastroFuncionarioPanel extends JPanel{
 			textNascimentoConstraints.gridx = 1;
 			textNascimentoConstraints.gridy = 1;
 			textNascimentoConstraints.ipadx = 100;
-			textNascimentoConstraints.insets = new Insets(15, 15, 15, 15);
+			textNascimentoConstraints.insets = new Insets(15, -95, 15, 15);
 		}
 		return textNascimentoConstraints;
 	}
@@ -371,7 +443,7 @@ public class CadastroFuncionarioPanel extends JPanel{
 			textCpfConstraints.gridy = 4;
 			textCpfConstraints.ipadx = 100;
 			textCpfConstraints.weightx = 1.0;
-			textCpfConstraints.insets = new Insets(15, 15, 15, 15);
+			textCpfConstraints.insets = new Insets(15, -95, 15, 15);
 		}
 		return textCpfConstraints;
 	}
@@ -393,7 +465,7 @@ public class CadastroFuncionarioPanel extends JPanel{
 			textRgConstraints.gridy = 5;
 			textRgConstraints.ipadx = 100;
 			textRgConstraints.weightx = 1.0;
-			textRgConstraints.insets = new Insets(15, 15, 15, 15);
+			textRgConstraints.insets = new Insets(15, -95, 15, 15);
 		}
 		return textRgConstraints;
 	}
@@ -481,7 +553,7 @@ public class CadastroFuncionarioPanel extends JPanel{
 			textTelConstraints.gridy = 9;
 			textTelConstraints.ipadx = 100;
 			textTelConstraints.weightx = 1.0;
-			textTelConstraints.insets = new Insets(15, 15, 15, 15);
+			textTelConstraints.insets = new Insets(15, -95, 15, 15);
 		}
 		return textTelConstraints;
 	}
