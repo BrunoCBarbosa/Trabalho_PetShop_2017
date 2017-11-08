@@ -17,7 +17,7 @@ public class EditaFuncionarioFrame extends JFrame{
 	
 	private PesquisarPanel pesquisarPanel;
 	private CadastroPessoaPanel editaPanel;
-	private ButtonPanelEditaFuncionario buttonPanel;
+	private ButtonPanelEdicao buttonPanel;
 	
 	//CONSTRUCTOR
 	public EditaFuncionarioFrame(SearchController controller){
@@ -50,9 +50,9 @@ public class EditaFuncionarioFrame extends JFrame{
 		return editaPanel;
 	}
 
-	private ButtonPanelEditaFuncionario getButtonPanel() {
+	private ButtonPanelEdicao getButtonPanel() {
 		if(buttonPanel == null){
-			buttonPanel = new ButtonPanelEditaFuncionario();
+			buttonPanel = new ButtonPanelEdicao();
 			buttonPanel.addButtonsListener(new EditarButtonListener() {
 				
 				@Override

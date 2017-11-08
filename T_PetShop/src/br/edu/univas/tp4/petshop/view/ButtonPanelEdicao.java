@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import br.edu.univas.tp4.petshop.controller.EditarButtonListener;
 
-public class ButtonPanelEditaFuncionario extends JPanel{
+public class ButtonPanelEdicao extends JPanel{
 
 	private static final long serialVersionUID = -960778352303260242L;
 	
@@ -19,7 +19,7 @@ public class ButtonPanelEditaFuncionario extends JPanel{
 	
 	private ArrayList<EditarButtonListener> listeners = new ArrayList<>();
 	
-	public ButtonPanelEditaFuncionario(){
+	public ButtonPanelEdicao(){
 		initialize();
 	}
 	
@@ -68,7 +68,7 @@ public class ButtonPanelEditaFuncionario extends JPanel{
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
+					excluirClicked();
 					
 				}
 			});
@@ -92,7 +92,7 @@ public class ButtonPanelEditaFuncionario extends JPanel{
 		}
 	}
 	
-	private void excluirCLicked(){
+	private void excluirClicked(){
 		for(EditarButtonListener listener : listeners){
 			listener.excluirPerformed();
 		}
