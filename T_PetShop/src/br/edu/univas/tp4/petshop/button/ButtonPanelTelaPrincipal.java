@@ -1,4 +1,4 @@
-package br.edu.univas.tp4.petshop.view;
+package br.edu.univas.tp4.petshop.button;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import br.edu.univas.tp4.petshop.controller.PrincipalButtonListener;
+import br.edu.univas.tp4.petshop.listener.PrincipalButtonListener;
 
 public class ButtonPanelTelaPrincipal extends JPanel{
 

@@ -1,4 +1,4 @@
-package br.edu.univas.tp4.petshop.view;
+package br.edu.univas.tp4.petshop.panel;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -22,8 +22,8 @@ public class CadastroProdutoPanel extends JPanel {
 	private JTextField textNome;
 	private JLabel labelDesc;
 	private JTextArea textDesc;
-	private JLabel labelTransp;
-	private JTextField textTransp;
+	private JLabel labelQuant;
+	private JTextField textQuant;
 	private JLabel labelCompra;
 	private JTextField textCompra;
 	private JLabel labelVenda;
@@ -37,8 +37,8 @@ public class CadastroProdutoPanel extends JPanel {
 	private GridBagConstraints textNomeConstraints;
 	private GridBagConstraints labelDescConstraints;
 	private GridBagConstraints textDesConstraints;
-	private GridBagConstraints labelTranspConstraints;
-	private GridBagConstraints textTranspConstraints;
+	private GridBagConstraints labelQuantConstraints;
+	private GridBagConstraints textQuantConstraints;
 	private GridBagConstraints labelCompraConstraints;
 	private GridBagConstraints textCompraConstraints;
 	private GridBagConstraints labelVendaConstraints;
@@ -47,7 +47,6 @@ public class CadastroProdutoPanel extends JPanel {
 	/*========================== CONSTRUTOR==================*/
 	public CadastroProdutoPanel(){
 		initialize();
-		
 	}
 	
 	/*==================== ADDS ============================*/
@@ -60,8 +59,8 @@ public class CadastroProdutoPanel extends JPanel {
 		add(getTextNome(), getTextNomeConstraints());
 		add(getLabelDesc(), getLabelDescConstraints());
 		add(getScrollPane(), getTextDesConstraints());
-		add(getLabelTransp(), getLabelTranspConstraints());
-		add(getTextTransp(), getTextTranspConstraints());
+		add(getLabelQuant(), getLabelQuantConstraints());
+		add(getTextQuant(), getTextQuantConstraints());
 		add(getLabelCompra(), getLabelCompraConstraints());
 		add(getTextCompra(), getTextCompraConstraints());
 		add(getLabelVenda(), getLabelVendaConstraints());
@@ -124,20 +123,20 @@ public class CadastroProdutoPanel extends JPanel {
 		return scroll;
 	}
 
-	private JLabel getLabelTransp() {
-		if(labelTransp == null){
-			labelTransp = new JLabel();
-			labelTransp.setText("Transportadora");
+	private JLabel getLabelQuant() {
+		if(labelQuant == null){
+			labelQuant= new JLabel();
+			labelQuant.setText("Quantidade");
 		}
-		return labelTransp;
+		return labelQuant;
 	}
 
-	private JTextField getTextTransp() {
-		if(textTransp == null){
-			textTransp = new JTextField();
-			textTransp.setColumns(20);
+	private JTextField getTextQuant() {
+		if(textQuant == null){
+			textQuant = new JTextField();
+			textQuant.setColumns(20);
 		}
-		return textTransp;
+		return textQuant;
 	}
 
 	private JLabel getLabelCompra() {
@@ -238,26 +237,26 @@ public class CadastroProdutoPanel extends JPanel {
 		return textDesConstraints;
 	}
 
-	private GridBagConstraints getLabelTranspConstraints() {
-		if(labelTranspConstraints == null){
-			labelTranspConstraints = new GridBagConstraints();
-			labelTranspConstraints.gridx = 0;
-			labelTranspConstraints.gridy = 3;
-			labelTranspConstraints.insets = new Insets(15, 15, 15, 15);
+	private GridBagConstraints getLabelQuantConstraints() {
+		if(labelQuantConstraints == null){
+			labelQuantConstraints = new GridBagConstraints();
+			labelQuantConstraints.gridx = 0;
+			labelQuantConstraints.gridy = 3;
+			labelQuantConstraints.insets = new Insets(15, 15, 15, 15);
 		}
-		return labelTranspConstraints;
+		return labelQuantConstraints;
 	}
 
-	private GridBagConstraints getTextTranspConstraints() {
-		if(textTranspConstraints == null){
-			textTranspConstraints = new GridBagConstraints();
-			textTranspConstraints.gridx = 1;
-			textTranspConstraints.gridy = 3;
-			textTranspConstraints.ipadx = 100;
-			textTranspConstraints.weightx = 1.0;
-			textTranspConstraints.insets = new Insets(15, 15, 15, 15);
+	private GridBagConstraints getTextQuantConstraints() {
+		if(textQuantConstraints == null){
+			textQuantConstraints  = new GridBagConstraints();
+			textQuantConstraints .gridx = 1;
+			textQuantConstraints .gridy = 3;
+			textQuantConstraints .ipadx = 100;
+			textQuantConstraints .weightx = 1.0;
+			textQuantConstraints .insets = new Insets(15, 15, 15, 15);
 		}
-		return textTranspConstraints;
+		return textQuantConstraints ;
 	}
 
 	private GridBagConstraints getLabelCompraConstraints() {

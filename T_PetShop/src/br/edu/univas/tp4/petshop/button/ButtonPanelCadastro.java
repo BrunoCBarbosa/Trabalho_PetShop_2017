@@ -1,34 +1,33 @@
-package br.edu.univas.tp4.petshop.view;
+package br.edu.univas.tp4.petshop.button;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import br.edu.univas.tp4.petshop.controller.EditarButtonListener;
+import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
 
-public class ButtonPanelEdicao extends JPanel{
+public class ButtonPanelCadastro extends JPanel{
 
-	private static final long serialVersionUID = -960778352303260242L;
+	private static final long serialVersionUID = 4349390655740753228L;
 	
 	private JButton salvarButton;
-	private JButton excluirButton;
 	private JButton cancelButton;
 	
-	private ArrayList<EditarButtonListener> listeners = new ArrayList<>();
-	
-	public ButtonPanelEdicao(){
+	private ArrayList<SalvarSairButtonListener> listeners = new ArrayList<>();
+
+	public ButtonPanelCadastro(){
 		initialize();
 	}
 	
-	public void initialize(){
+	private void initialize(){
 		add(getSalvarButton());
-		add(getExcluirButton());
 		add(getCancelButoon());
 	}
-	
+
 	private JButton getSalvarButton() {
 		if (salvarButton == null){
 			salvarButton = new JButton();
@@ -60,42 +59,21 @@ public class ButtonPanelEdicao extends JPanel{
 		return cancelButton;
 	}
 	
-	private JButton getExcluirButton() {
-		if(excluirButton == null){
-			excluirButton = new JButton();
-			excluirButton.setText("Excluir");
-			excluirButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					excluirClicked();
-					
-				}
-			});
-		}
-		return excluirButton;
-	}
-
-	public void addButtonsListener(EditarButtonListener listener){
+	public void addButtonsListener(SalvarSairButtonListener listener){
 		listeners.add(listener);
 	}
 	
 	private void salvarClicked(){
-		for(EditarButtonListener listener : listeners){
+		for(SalvarSairButtonListener listener : listeners){
 			listener.salvarPerformed();
 		}
 	}
 	
 	private void cancelClicked(){
-		for(EditarButtonListener listener : listeners){
+		for(SalvarSairButtonListener listener : listeners){
 			listener.cancelPerformed();
 		}
 	}
 	
-	private void excluirClicked(){
-		for(EditarButtonListener listener : listeners){
-			listener.excluirPerformed();
-		}
-	}
-
+	
 }

@@ -13,7 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import br.edu.univas.tp4.petshop.controller.SalvarSairButtonListener;
+import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
+import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
+import br.edu.univas.tp4.petshop.button.ButtonPanelCadastro;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class CadastroFuncionarioFrame extends JFrame{

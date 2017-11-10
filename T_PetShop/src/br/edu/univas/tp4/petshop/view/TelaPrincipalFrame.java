@@ -5,7 +5,9 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import br.edu.univas.tp4.petshop.controller.PrincipalButtonListener;
+import br.edu.univas.tp4.petshop.listener.PrincipalButtonListener;
+import br.edu.univas.tp4.petshop.panel.TelaPrincipalPanel;
+import br.edu.univas.tp4.petshop.button.ButtonPanelTelaPrincipal;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class TelaPrincipalFrame extends JFrame{

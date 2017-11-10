@@ -6,7 +6,9 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import br.edu.univas.tp4.petshop.controller.SalvarSairButtonListener;
+import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
+import br.edu.univas.tp4.petshop.panel.CadastroProdutoPanel;
+import br.edu.univas.tp4.petshop.button.ButtonPanelCadastro;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class CadastroProdutoFrame extends JFrame{

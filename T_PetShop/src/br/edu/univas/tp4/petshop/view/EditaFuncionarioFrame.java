@@ -6,7 +6,10 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import br.edu.univas.tp4.petshop.controller.EditarButtonListener;
+import br.edu.univas.tp4.petshop.listener.EditarButtonListener;
+import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
+import br.edu.univas.tp4.petshop.panel.PesquisarPanel;
+import br.edu.univas.tp4.petshop.button.ButtonPanelEdicao;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class EditaFuncionarioFrame extends JFrame{

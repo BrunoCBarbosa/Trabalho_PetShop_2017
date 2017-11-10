@@ -1,4 +1,4 @@
-package br.edu.univas.tp4.petshop.view;
+package br.edu.univas.tp4.petshop.panel;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
