@@ -1,10 +1,11 @@
 package br.edu.univas.tp4.petshop.controller;
 
-import br.edu.univas.tp4.petshop.view.CadastroFuncionarioFrame;
-import br.edu.univas.tp4.petshop.view.CadastroProdutoFrame;
-import br.edu.univas.tp4.petshop.view.EditaFuncionarioFrame;
-import br.edu.univas.tp4.petshop.view.EditaProdutoFrame;
-import br.edu.univas.tp4.petshop.view.TelaPrincipalFrame;
+import br.edu.univas.tp4.petshop.frame.CadastroFuncionarioFrame;
+import br.edu.univas.tp4.petshop.frame.CadastroProdutoFrame;
+import br.edu.univas.tp4.petshop.frame.EditaFuncionarioFrame;
+import br.edu.univas.tp4.petshop.frame.EditaProdutoFrame;
+import br.edu.univas.tp4.petshop.frame.TelaPrincipalFrame;
+import br.edu.univas.tp4.petshop.frame.VendasFrame;
 
 public class SearchController {
 	
@@ -13,12 +14,13 @@ public class SearchController {
 	private EditaFuncionarioFrame editaFuncionarioFrame;
 	private CadastroProdutoFrame cadastroProdutoFrame;
 	private EditaProdutoFrame editaProdutoFrame;
+	private VendasFrame vendasFrame;
 	
 	public SearchController(){
-		editaProdutoFrame = new EditaProdutoFrame(this);
+		vendasFrame = new VendasFrame(this);
 	}
 	
 	public void initialize(){
-		editaProdutoFrame.setVisible(true);
+		vendasFrame.setVisible(true);
 	}
 }

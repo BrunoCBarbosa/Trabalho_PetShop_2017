@@ -1,4 +1,4 @@
-package br.edu.univas.tp4.petshop.view;
+package br.edu.univas.tp4.petshop.frame;
 
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;

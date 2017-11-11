@@ -18,16 +18,19 @@ public class ButtonPanelCadastro extends JPanel{
 	private JButton cancelButton;
 	
 	private ArrayList<SalvarSairButtonListener> listeners = new ArrayList<>();
-
+	
+	/*====================== CONSTRUTOR ==========================*/
 	public ButtonPanelCadastro(){
 		initialize();
 	}
 	
+	/*========================= ADDS ==============================*/
 	private void initialize(){
 		add(getSalvarButton());
 		add(getCancelButoon());
 	}
-
+	
+	/*======================= GETTERS ============================*/
 	private JButton getSalvarButton() {
 		if (salvarButton == null){
 			salvarButton = new JButton();
@@ -59,10 +62,12 @@ public class ButtonPanelCadastro extends JPanel{
 		return cancelButton;
 	}
 	
+	
 	public void addButtonsListener(SalvarSairButtonListener listener){
 		listeners.add(listener);
 	}
 	
+	/*=================== LISTENERS ============================*/
 	private void salvarClicked(){
 		for(SalvarSairButtonListener listener : listeners){
 			listener.salvarPerformed();

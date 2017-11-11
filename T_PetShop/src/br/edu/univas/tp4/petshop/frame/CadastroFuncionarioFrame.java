@@ -1,48 +1,52 @@
-package br.edu.univas.tp4.petshop.view;
+
+package br.edu.univas.tp4.petshop.frame;
 
 import java.awt.BorderLayout;
-import java.awt.GraphicsConfiguration;
-import java.awt.HeadlessException;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
-import br.edu.univas.tp4.petshop.panel.CadastroProdutoPanel;
+import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
 import br.edu.univas.tp4.petshop.button.ButtonPanelCadastro;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
-public class CadastroProdutoFrame extends JFrame{
-
-	private static final long serialVersionUID = -8437564757584634441L;
+public class CadastroFuncionarioFrame extends JFrame{
+	private static final long serialVersionUID = -4221091737850320808L;
 	
 	private SearchController controller;
 	
-	private CadastroProdutoPanel produtoPanel;
-	private ButtonPanelCadastro buttonPanel;
+	private CadastroPessoaPanel clientePanel;
+	private ButtonPanelCadastro buttonPanel; 
 	
-	/*=================== CONSTRUTOR =======================*/
-	public CadastroProdutoFrame(SearchController controller){
-		super("Cadastrar Produto");
+	//Construtor
+	public CadastroFuncionarioFrame(SearchController controller){
+		super("Informações do Cliente");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		initialize();
-		setSize(700,600);
+		setSize(700,650);
 		setLocationRelativeTo(null);
 		setResizable(false);
 	}
 	
-	/*================= ADDS =====================*/
 	private void initialize(){
-		add(getProdutoPanel(), BorderLayout.WEST);
-		add(getButtonPanel(), BorderLayout.PAGE_END);
+		add(getFuncionarioPanel(),BorderLayout.WEST);
+		add(getButtonPanel(),BorderLayout.PAGE_END);
 	}
-	
-	/*=================== GETTERS ================*/
-	private CadastroProdutoPanel getProdutoPanel() {
-		if(produtoPanel == null){
-			produtoPanel = new CadastroProdutoPanel();
+
+	private CadastroPessoaPanel getFuncionarioPanel() {
+		if(clientePanel == null){
+			clientePanel = new CadastroPessoaPanel();
 		}
-		return produtoPanel;
+		return clientePanel;
 	}
 
 	private ButtonPanelCadastro getButtonPanel() {
@@ -53,13 +57,11 @@ public class CadastroProdutoFrame extends JFrame{
 				@Override
 				public void salvarPerformed() {
 					salvarClicked();
-					
 				}
 				
 				@Override
 				public void cancelPerformed() {
 					cancelClicked();
-					
 				}
 			});
 		}
@@ -73,5 +75,4 @@ public class CadastroProdutoFrame extends JFrame{
 	public void cancelClicked(){
 		//TODO:implementar
 	}
-
 }
