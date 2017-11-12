@@ -62,12 +62,11 @@ public class ButtonPanelCadastro extends JPanel{
 		return cancelButton;
 	}
 	
-	
+	/*=================== LISTENERS ============================*/
 	public void addButtonsListener(SalvarSairButtonListener listener){
 		listeners.add(listener);
 	}
 	
-	/*=================== LISTENERS ============================*/
 	private void salvarClicked(){
 		for(SalvarSairButtonListener listener : listeners){
 			listener.salvarPerformed();

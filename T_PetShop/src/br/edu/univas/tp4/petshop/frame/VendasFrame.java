@@ -6,7 +6,8 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 
 import br.edu.univas.tp4.petshop.controller.SearchController;
-import br.edu.univas.tp4.petshop.panel.TabelProdutosPanel;
+import br.edu.univas.tp4.petshop.listener.VendaListener;
+import br.edu.univas.tp4.petshop.panel.TabelaProdutosPanel;
 import br.edu.univas.tp4.petshop.panel.VendaPanel;
 
 public class VendasFrame extends JFrame{
@@ -16,7 +17,7 @@ public class VendasFrame extends JFrame{
 	private SearchController controller;
 	
 	private VendaPanel vendaPanel;
-	private TabelProdutosPanel tabelaProdutosPanel;
+	private TabelaProdutosPanel tabelaProdutosPanel;
 	
 	/*======================== CONSTRUTOR ========================*/
 	public VendasFrame(SearchController controller){
@@ -39,23 +40,54 @@ public class VendasFrame extends JFrame{
 	public VendaPanel getVendaPanel() {
 		if(vendaPanel == null){
 			vendaPanel = new VendaPanel();
+			vendaPanel.addButtonListener(new VendaListener() {
+				
+				@Override
+				public void retirarPerformed() {
+					retirarClicked();
+					
+				}
+				
+				@Override
+				public void pagarPerformed() {
+					pagarClicked();
+				}
+				
+				@Override
+				public void incluirPerformed() {
+					incluirClicked();
+				}
+				
+				@Override
+				public void cancelarPerformed() {
+					cancelarClicked();
+				}
+			});
 		}
 		return vendaPanel;
 	}
 	
-	public TabelProdutosPanel getTabelaProdutosPanel(){
+	public TabelaProdutosPanel getTabelaProdutosPanel(){
 		if(tabelaProdutosPanel == null){
-			tabelaProdutosPanel = new TabelProdutosPanel();
+			tabelaProdutosPanel = new TabelaProdutosPanel();
 		}
 		return tabelaProdutosPanel;
 	}
 	
 	/*====================== BUTTONS =====================*/
-	public void incluirClicked(){
+	private void incluirClicked(){
 		//TODO : implementar
 	}
 	
-	public void retirarClicked(){
+	private void retirarClicked(){
+		//TODO : implementar
+	}
+	
+	private void pagarClicked(){
+		//TODO : implementar
+	}
+	
+	private void cancelarClicked(){
 		//TODO : implementar
 	}
 }

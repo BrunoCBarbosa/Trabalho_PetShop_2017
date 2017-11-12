@@ -60,19 +60,19 @@ public class EditaFuncionarioFrame extends JFrame{
 				
 				@Override
 				public void salvarPerformed() {
-					// TODO Auto-generated method stub
+					salvarClicked();
 					
 				}
 				
 				@Override
 				public void excluirPerformed() {
-					// TODO Auto-generated method stub
+					cancelClicked();
 					
 				}
 				
 				@Override
 				public void cancelPerformed() {
-					// TODO Auto-generated method stub
+					excluirClicked();
 					
 				}
 			});

@@ -1,4 +1,4 @@
-package br.edu.univas.tp4.petshop.panel;
+	package br.edu.univas.tp4.petshop.panel;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class TabelProdutosPanel extends JPanel{
+public class TabelaProdutosPanel extends JPanel{
 
 	private static final long serialVersionUID = -8056650082489084930L;
 	
@@ -15,10 +15,11 @@ public class TabelProdutosPanel extends JPanel{
 	private JScrollPane scrollPane;
 	
 	/*==================== CONSTRUTOR ===========================*/
-	public TabelProdutosPanel(){
+	public TabelaProdutosPanel(){
 		initialize();
 	}
 	
+	/*====================== ADDS ====================*/
 	public void initialize(){
 		setLayout(new FlowLayout());
 		
@@ -43,7 +44,7 @@ public class TabelProdutosPanel extends JPanel{
 	public JScrollPane getScrollPane() {
 		if(scrollPane == null){
 			scrollPane = new JScrollPane(getTabelaProdutos());
-			scrollPane.setPreferredSize(new Dimension(670, 450));
+			scrollPane.setPreferredSize(new Dimension(670, 400));
 		}
 		return scrollPane;
 	}

@@ -5,10 +5,13 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import br.edu.univas.tp4.petshop.listener.PesquisarListener;
 
 public class PesquisarPanel extends JPanel {
 
@@ -19,6 +22,8 @@ public class PesquisarPanel extends JPanel {
 	
 	private GridBagConstraints textPesquisarConstraints;
 	private GridBagConstraints buttonPesquisaConstraints;
+	
+	private ArrayList<PesquisarListener> listeners = new ArrayList<>();
 	
 	public PesquisarPanel(){
 		initialize();
@@ -47,7 +52,7 @@ public class PesquisarPanel extends JPanel {
 				
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					// TODO Auto-generated method stub
+					pesquisarClicked();
 					
 				}
 			});
@@ -76,6 +81,16 @@ public class PesquisarPanel extends JPanel {
 		}
 		return buttonPesquisaConstraints;
 	}
-
+	
+	/*======================= LISTENER ========================*/
+	private void addButtonListener(PesquisarListener listener){
+		listeners.add(listener);
+	}
+	
+	private void pesquisarClicked(){
+		for(PesquisarListener listener : listeners){
+			listener.pesquisarPerformed();
+		}
+	}
 	
 }

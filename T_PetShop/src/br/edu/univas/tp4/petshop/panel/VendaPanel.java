@@ -139,7 +139,21 @@ public class VendaPanel extends JPanel{
 		return retirarButton;
 	}
 	
-	
+	private JButton getCancelarButton(){
+		if(cancelarButton == null){
+			cancelarButton = new JButton();
+			cancelarButton.setText("Cancelar");
+			cancelarButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					cancelarClicked();
+					
+				}
+			});
+		}
+		return cancelarButton;
+	}
 
 	private JLabel getPrecoTotalLabel() {
 		if(precoTotalLabel == null){
@@ -205,22 +219,6 @@ public class VendaPanel extends JPanel{
 		return pagarButton;
 	}
 	
-	private JButton getCancelarButton(){
-		if(cancelarButton == null){
-			cancelarButton = new JButton();
-			cancelarButton.setText("Cancelar");
-			cancelarButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					cancelarClicked();
-					
-				}
-			});
-		}
-		return cancelarButton;
-	}
-
 	private GridBagConstraints getProdutoLabelConstraints() {
 		if(produtoLabelConstraints == null){
 			produtoLabelConstraints = new GridBagConstraints();
@@ -244,8 +242,8 @@ public class VendaPanel extends JPanel{
 	private GridBagConstraints getQuantidadeLabelConstraints() {
 		if(quantidadeLabelConstraints == null){
 			quantidadeLabelConstraints = new GridBagConstraints();
-			quantidadeLabelConstraints.gridx = 0;
-			quantidadeLabelConstraints.gridy = 1;
+			quantidadeLabelConstraints.gridx = 3;
+			quantidadeLabelConstraints.gridy = 0;
 			quantidadeLabelConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return quantidadeLabelConstraints;
@@ -254,8 +252,8 @@ public class VendaPanel extends JPanel{
 	private GridBagConstraints getQuantidadeTextConstraints() {
 		if(quantidadeTextConstraints == null){
 			quantidadeTextConstraints = new GridBagConstraints();
-			quantidadeTextConstraints.gridx = 1;
-			quantidadeTextConstraints.gridy = 1;
+			quantidadeTextConstraints.gridx = 4;
+			quantidadeTextConstraints.gridy = 0;
 			quantidadeTextConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return quantidadeTextConstraints;
@@ -281,8 +279,16 @@ public class VendaPanel extends JPanel{
 		return retirarButtonConstraints;
 	}
 	
-	
-	
+	private GridBagConstraints getCancelarButtonConstraints(){
+		if(cancelarButtonConstraints == null){
+			cancelarButtonConstraints = new GridBagConstraints();
+			cancelarButtonConstraints.gridx = 4;
+			cancelarButtonConstraints.gridy = 1;
+			cancelarButtonConstraints.insets = new Insets(15, 15, 15, 15);
+		}
+		return cancelarButtonConstraints;
+	}
+
 	private GridBagConstraints getPrecoTotalLabelConstraints() {
 		if(precoTotalLabelConstraints == null){
 			precoTotalLabelConstraints = new GridBagConstraints();
@@ -353,17 +359,12 @@ public class VendaPanel extends JPanel{
 		return pagarButtonConstraints;
 	}
 	
-	private GridBagConstraints getCancelarButtonConstraints(){
-		if(cancelarButtonConstraints == null){
-			cancelarButtonConstraints = new GridBagConstraints();
-			cancelarButtonConstraints.gridx = 4;
-			cancelarButtonConstraints.gridy = 1;
-			cancelarButtonConstraints.insets = new Insets(15, 15, 15, 15);
-		}
-		return cancelarButtonConstraints;
-	}
-
+	
 	/*======================= LISTENERS ====================*/
+	public void addButtonListener(VendaListener listener){
+		listeners.add(listener);
+	}
+	
 	private void incluirClicked(){
 		for(VendaListener listener : listeners){
 			listener.incluirPerformed();
