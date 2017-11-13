@@ -21,10 +21,10 @@ public class SearchController {
 	private RelatorioVendasFrame relatorioVendasFrame;
 	
 	public SearchController(){
-		relatorioVendasFrame = new RelatorioVendasFrame(this);
+		telaPrincipalFrame = new TelaPrincipalFrame(this);
 	}
 	
 	public void initialize(){
-		relatorioVendasFrame.setVisible(true);
+		telaPrincipalFrame.setVisible(true);
 	}
 }
