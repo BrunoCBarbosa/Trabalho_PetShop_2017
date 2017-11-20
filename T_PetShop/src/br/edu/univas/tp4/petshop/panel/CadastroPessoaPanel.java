@@ -28,9 +28,11 @@ public class CadastroPessoaPanel extends JPanel{
 	private ButtonGroup buttonGroup;
 	private JLabel labelCpf;
 	private JFormattedTextField textCpf;
-	private JLabel labelRg;
+/*	private JLabel labelRg;
 	private JFormattedTextField textRg;
-	private JLabel labelEndereco;
+	private JLabel labelOrgao;
+	private JTextField textOrgao;
+*/	private JLabel labelEndereco;
 	private JTextField textEndereco;
 	private JLabel labelBairro;
 	private JTextField textBairro;
@@ -50,9 +52,11 @@ public class CadastroPessoaPanel extends JPanel{
 	private GridBagConstraints femininoConstraints;
 	private GridBagConstraints labelCpfConstraints;
 	private GridBagConstraints textCpfConstraints;
-	private GridBagConstraints labelRgConstraints;
+/*	private GridBagConstraints labelRgConstraints;
 	private GridBagConstraints textRgConstraints;
-	private GridBagConstraints labelEnderecoConstraints;
+	private GridBagConstraints labelOrgaoConstraints;
+	private GridBagConstraints textOrgaoConstraints;
+*/	private GridBagConstraints labelEnderecoConstraints;
 	private GridBagConstraints textEnderecoConstraints;
 	private GridBagConstraints labelBairroConstraints;
 	private GridBagConstraints textBairroConstraints;
@@ -67,8 +71,7 @@ public class CadastroPessoaPanel extends JPanel{
 	private MaskFormatter mascaraCpf;
 	private MaskFormatter mascaraRg;
 	private MaskFormatter mascaraTel;
-
-	
+		
 	public CadastroPessoaPanel(){
 			initialize();
 	}
@@ -78,7 +81,7 @@ public class CadastroPessoaPanel extends JPanel{
 		getButtonGroup();
 		getMascaraData();
 		getMascaraCpf();
-		getMascaraRG();
+	//	getMascaraRG();
 		getMascaraTel();
 		
 		add(getLabelNome(),getLabelNomeConstraints());
@@ -90,9 +93,11 @@ public class CadastroPessoaPanel extends JPanel{
 		add(getButtonFeminino(),getFemininoConstraints());
 		add(getLabelCpf(),getLabelCpfConstraints());
 		add(getTextCpf(),getTextCpfConstraints());
-		add(getLabelRg(),getLabelRgConstraints());
+	/*	add(getLabelRg(),getLabelRgConstraints());
 		add(getTextRg(),getTextRgConstraints());
-		add(getLabelEndereco(),getLabelEnderecoConstraints());
+		add(getLabelOrgao(), getLabelOrgaoConstraints());
+		add(getTextOrgao(), getTextOrgaoConstraints());
+*/		add(getLabelEndereco(),getLabelEnderecoConstraints());
 		add(getTextEndereco(),getTextEnderecoConstraints());
 		add(getLabelBairro(),getLabelBairroConstraints());
 		add(getTextBairro(),getTextBairroConstraints());
@@ -200,7 +205,7 @@ public class CadastroPessoaPanel extends JPanel{
 		return labelCpf;
 	}
 
-	private JTextField getTextCpf() {
+	private JFormattedTextField getTextCpf() {
 		if(textCpf== null){
 			textCpf= new JFormattedTextField(mascaraCpf);
 			textCpf.setPreferredSize(new Dimension(1, 20));
@@ -222,7 +227,7 @@ public class CadastroPessoaPanel extends JPanel{
 		return mascaraCpf;
 	}
 
-	/*=============== RG ================*/
+	/*=============== RG ================
 	private JLabel getLabelRg() {
 		if(labelRg== null){
 			labelRg= new JLabel();
@@ -251,8 +256,27 @@ public class CadastroPessoaPanel extends JPanel{
 			}
 		}
 		return mascaraRg;
+	}*/
+	
+	
+	/*================= ORGÃO EXPEDITOR ===========================
+	private JLabel getLabelOrgao() {
+		if(labelOrgao == null){
+			labelOrgao = new JLabel();
+			labelOrgao.setText("Orgão Expeditor");
+		}
+		return labelOrgao;
 	}
 
+	private JTextField getTextOrgao() {
+		if(textOrgao == null){
+			textOrgao = new JTextField();
+			textOrgao.setPreferredSize(new Dimension(1, 20));
+		}
+		return textOrgao;
+	}*/
+
+	
 	/*=============== ENDEREÇO ================*/
 	private JLabel getLabelEndereco() {
 		if(labelEndereco == null){
@@ -448,7 +472,7 @@ public class CadastroPessoaPanel extends JPanel{
 		return textCpfConstraints;
 	}
 
-	private GridBagConstraints getLabelRgConstraints() {
+	/*private GridBagConstraints getLabelRgConstraints() {
 		if(labelRgConstraints == null){
 			labelRgConstraints = new GridBagConstraints();
 			labelRgConstraints.gridx = 0;
@@ -469,12 +493,34 @@ public class CadastroPessoaPanel extends JPanel{
 		}
 		return textRgConstraints;
 	}
+	
+	private GridBagConstraints getLabelOrgaoConstraints() {
+		if(labelOrgaoConstraints == null){
+			labelOrgaoConstraints = new GridBagConstraints();
+			labelOrgaoConstraints.gridx = 0;
+			labelOrgaoConstraints.gridy = 6;
+			labelOrgaoConstraints.insets = new Insets(15, 15, 15, 15);
+		}
+		return labelOrgaoConstraints;
+	}
+
+	private GridBagConstraints getTextOrgaoConstraints() {
+		if(textOrgaoConstraints == null){
+			textOrgaoConstraints = new GridBagConstraints();
+			textOrgaoConstraints.gridx = 1;
+			textOrgaoConstraints.gridy = 6;
+			textOrgaoConstraints.ipadx = 100;
+			textOrgaoConstraints.weightx = 1.0;
+			textOrgaoConstraints.insets = new Insets(15, 15, 15, 15);
+		}
+		return textOrgaoConstraints;
+	}	*/
 
 	private GridBagConstraints getLabelEnderecoConstraints() {
 		if(labelEnderecoConstraints == null){
 			labelEnderecoConstraints = new GridBagConstraints();
 			labelEnderecoConstraints.gridx = 0;
-			labelEnderecoConstraints.gridy = 6;
+			labelEnderecoConstraints.gridy = 5;
 			labelEnderecoConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return labelEnderecoConstraints;
@@ -484,7 +530,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(textEnderecoConstraints == null){
 			textEnderecoConstraints = new GridBagConstraints();
 			textEnderecoConstraints.gridx = 1;
-			textEnderecoConstraints.gridy = 6;
+			textEnderecoConstraints.gridy = 5;
 			textEnderecoConstraints.ipadx = 100;
 			textEnderecoConstraints.weightx = 1.0;
 			textEnderecoConstraints.insets = new Insets(15, 15, 15, 15);
@@ -496,7 +542,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(labelBairroConstraints == null){
 			labelBairroConstraints = new GridBagConstraints();
 			labelBairroConstraints.gridx = 0;
-			labelBairroConstraints.gridy = 7;
+			labelBairroConstraints.gridy = 6;
 			labelBairroConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return labelBairroConstraints;
@@ -506,7 +552,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(textBairroConstraints == null){
 			textBairroConstraints = new GridBagConstraints();
 			textBairroConstraints.gridx = 1;
-			textBairroConstraints.gridy = 7;
+			textBairroConstraints.gridy = 6;
 			textBairroConstraints.ipadx = 100;
 			textBairroConstraints.weightx = 1.0;
 			textBairroConstraints.insets = new Insets(15, 15, 15, 15);
@@ -518,7 +564,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(labelCidadeConstraints == null){
 			labelCidadeConstraints = new GridBagConstraints();
 			labelCidadeConstraints.gridx = 0;
-			labelCidadeConstraints.gridy = 8;
+			labelCidadeConstraints.gridy = 7;
 			labelCidadeConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return labelCidadeConstraints;
@@ -528,7 +574,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(textCidadeConstraints == null){
 			textCidadeConstraints = new GridBagConstraints();
 			textCidadeConstraints.gridx = 1;
-			textCidadeConstraints.gridy = 8;
+			textCidadeConstraints.gridy = 7;
 			textCidadeConstraints.ipadx = 100;
 			textCidadeConstraints.weightx = 1.0;
 			textCidadeConstraints.insets = new Insets(15, 15, 15, 15);
@@ -540,7 +586,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(labelTelConstraints == null){
 			labelTelConstraints = new GridBagConstraints();
 			labelTelConstraints.gridx = 0;
-			labelTelConstraints.gridy = 9;
+			labelTelConstraints.gridy = 8;
 			labelTelConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return labelTelConstraints;
@@ -550,7 +596,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(textTelConstraints == null){
 			textTelConstraints = new GridBagConstraints();
 			textTelConstraints.gridx = 1;
-			textTelConstraints.gridy = 9;
+			textTelConstraints.gridy = 8;
 			textTelConstraints.ipadx = 100;
 			textTelConstraints.weightx = 1.0;
 			textTelConstraints.insets = new Insets(15, -95, 15, 15);
@@ -562,7 +608,7 @@ public class CadastroPessoaPanel extends JPanel{
 		if(labelEmailConstraints == null){
 			labelEmailConstraints = new GridBagConstraints();
 			labelEmailConstraints.gridx = 0;
-			labelEmailConstraints.gridy = 10;
+			labelEmailConstraints.gridy = 9;
 			labelEmailConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return labelEmailConstraints;
@@ -572,14 +618,13 @@ public class CadastroPessoaPanel extends JPanel{
 		if(textEmailConstraints == null){
 			textEmailConstraints = new GridBagConstraints();
 			textEmailConstraints.gridx = 1;
-			textEmailConstraints.gridy = 10;
+			textEmailConstraints.gridy = 9;
 			textEmailConstraints.ipadx = 100;
 			textEmailConstraints.weightx = 1.0;
 			textEmailConstraints.insets = new Insets(15, 15, 15, 15);
 		}
 		return textEmailConstraints;
-	}	
-	
-	
+	}
 
+	
 }
