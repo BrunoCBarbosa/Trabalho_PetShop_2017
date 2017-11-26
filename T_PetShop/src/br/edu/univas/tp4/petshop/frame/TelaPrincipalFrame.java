@@ -6,8 +6,10 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 
 import br.edu.univas.tp4.petshop.listener.PrincipalButtonListener;
+import br.edu.univas.tp4.petshop.panel.FuncionarioPanel;
 import br.edu.univas.tp4.petshop.panel.TelaPrincipalPanel;
 import br.edu.univas.tp4.petshop.button.ButtonPanelTelaPrincipal;
+import br.edu.univas.tp4.petshop.button.FuncionarioButton;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 
 public class TelaPrincipalFrame extends JFrame{
@@ -18,6 +20,8 @@ public class TelaPrincipalFrame extends JFrame{
 	
 	private TelaPrincipalPanel principalPanel;
 	private ButtonPanelTelaPrincipal buttonPrincipal;
+	private FuncionarioPanel funcionarioPanel;
+	private FuncionarioButton funcionarioButton;
 
 	public TelaPrincipalFrame(SearchController controller){
 		super("Petshop");
@@ -40,6 +44,26 @@ public class TelaPrincipalFrame extends JFrame{
 			principalPanel = new TelaPrincipalPanel();
 		}
 		return principalPanel;
+	}
+	
+	private FuncionarioPanel getFuncionarioPanel() {
+		if(funcionarioPanel == null){
+			funcionarioPanel = new FuncionarioPanel();
+			getPrincipalPanel().removeAll();
+			getPrincipalPanel().revalidate();
+		}
+		return funcionarioPanel;
+	}
+	
+	
+
+	private FuncionarioButton getFuncionarioButton() {
+		if(funcionarioButton == null){
+			funcionarioButton = new FuncionarioButton();
+			getButtonPrincipal().removeAll();
+			getButtonPrincipal().revalidate();
+		}
+		return funcionarioButton;
 	}
 
 	private ButtonPanelTelaPrincipal getButtonPrincipal() {
@@ -76,7 +100,8 @@ public class TelaPrincipalFrame extends JFrame{
 	}
 	
 	public void funcionarioClicked(){
-		//TODO:implementar
+		add(getFuncionarioPanel(),BorderLayout.NORTH);
+		add(getFuncionarioButton(),BorderLayout.CENTER);
 	}
 	
 	public void estoqueClicked(){

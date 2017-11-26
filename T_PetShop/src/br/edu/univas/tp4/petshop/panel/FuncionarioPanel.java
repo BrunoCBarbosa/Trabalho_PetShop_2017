@@ -14,7 +14,7 @@ public class FuncionarioPanel extends JPanel{
 	}
 	
 	public void initialize(){
-		
+		add(getTitulo());
 	}
 	
 	private JLabel getTitulo(){

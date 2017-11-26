@@ -33,6 +33,9 @@ public class FuncionarioButton extends JPanel{
 	
 	public void initialize(){
 		setLayout(new GridBagLayout());
+		add(getCadastrarButton());
+		add(getEditarButton());
+		add(getVoltarButton());
 	}
 	
 	/*================== GETTERS =============================*/
