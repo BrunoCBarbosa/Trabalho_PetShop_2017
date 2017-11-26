@@ -13,9 +13,9 @@ import javax.swing.JPanel;
 
 import br.edu.univas.tp4.petshop.listener.TelaOpcoesListener;
 
-public class FuncionarioButton extends JPanel{
+public class ProdutoButton extends JPanel{
 
-	private static final long serialVersionUID = -7352733474149028068L;
+	private static final long serialVersionUID = 4291682077203747334L;
 	
 	private JButton cadastrarButton;
 	private JButton editarButton;
@@ -27,7 +27,7 @@ public class FuncionarioButton extends JPanel{
 	
 	private ArrayList<TelaOpcoesListener> listeners = new ArrayList<>();
 	
-	public FuncionarioButton() {
+	public ProdutoButton() {
 		initialize();
 	}
 	
@@ -142,5 +142,5 @@ public class FuncionarioButton extends JPanel{
 			listener.voltarPerformed();
 		}
 	}
-	
+
 }

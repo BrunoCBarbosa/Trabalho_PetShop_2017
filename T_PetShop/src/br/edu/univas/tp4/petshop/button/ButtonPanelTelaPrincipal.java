@@ -166,7 +166,7 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 	
 	public void estoqueClicked(){
 		for(PrincipalButtonListener listener : listeners){
-			listener.estoquePerformed();
+			listener.produtoPerformed();
 		}
 	}
 	

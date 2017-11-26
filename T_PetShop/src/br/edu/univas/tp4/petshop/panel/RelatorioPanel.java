@@ -3,26 +3,25 @@ package br.edu.univas.tp4.petshop.panel;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class EstoquePanel extends JPanel{
+public class RelatorioPanel extends JPanel{
+
+	private static final long serialVersionUID = -466023513751724359L;
 	
-	private static final long serialVersionUID = -3529081977165109569L;
+private JLabel titulo;
 	
-	private JLabel titulo;
-	
-	public EstoquePanel() {
+	public RelatorioPanel() {
 		initialize();
 	}
 
 	public void initialize(){
-		
+		add(getTitulo());
 	}
 	
 	private JLabel getTitulo(){
 		if(titulo == null){
 			titulo = new JLabel();
-			titulo.setText("Tela Estoque");
+			titulo.setText("Tela Relatórios");
 		}
 		return titulo;
 	}
-
 }
