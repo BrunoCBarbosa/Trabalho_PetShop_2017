@@ -55,4 +55,4 @@ REFERENCES funcionarios (cpf);
 /*=========================== SELECT =============================*/
 /* SELECT * FROM produtos;
 SELECT * FROM funcionarios;
-SELECT * FROM produtos_vendidos;
+SELECT * FROM produtos_vendidos;*/
