@@ -45,12 +45,12 @@ public class TelaPrincipalFrame extends JFrame{
 		setSize(700,650);
 	}
 	
-	private void initialize(){
+	public void initialize(){
 		add(getPrincipalPanel(),BorderLayout.NORTH);
 		add(getButtonPrincipal(),BorderLayout.CENTER);
 	}
 
-	private TelaPrincipalPanel getPrincipalPanel() {
+	public TelaPrincipalPanel getPrincipalPanel() {
 		if(principalPanel == null){
 			principalPanel = new TelaPrincipalPanel();
 
@@ -58,7 +58,7 @@ public class TelaPrincipalFrame extends JFrame{
 		return principalPanel;
 	}
 	
-	private ButtonPanelTelaPrincipal getButtonPrincipal() {
+	public  ButtonPanelTelaPrincipal getButtonPrincipal() {
 		if(buttonPrincipal == null){
 			buttonPrincipal = new ButtonPanelTelaPrincipal();
 
@@ -92,7 +92,7 @@ public class TelaPrincipalFrame extends JFrame{
 		return buttonPrincipal;
 	}
 	
-	private FuncionarioPanel getFuncionarioPanel() {
+	public  FuncionarioPanel getFuncionarioPanel() {
 		if(funcionarioPanel == null){
 			funcionarioPanel = new FuncionarioPanel();
 		}
@@ -101,7 +101,7 @@ public class TelaPrincipalFrame extends JFrame{
 	
 	
 
-	private FuncionarioButton getFuncionarioButton() {
+	public  FuncionarioButton getFuncionarioButton() {
 		if(funcionarioButton == null){
 			funcionarioButton = new FuncionarioButton();
 			funcionarioButton.adddButtonListener(new TelaOpcoesListener() {
@@ -120,7 +120,7 @@ public class TelaPrincipalFrame extends JFrame{
 				
 				@Override
 				public void cadastrarPerformed() {
-					
+					cadastrarClicked();
 					
 				}
 			});
@@ -130,14 +130,14 @@ public class TelaPrincipalFrame extends JFrame{
 	
 	
 	
-	private ProdutoPanel getProdutoPanel() {
+	public  ProdutoPanel getProdutoPanel() {
 		if(produtoPanel == null){
 			produtoPanel = new ProdutoPanel();
 		}
 		return produtoPanel;
 	}
 
-	private ProdutoButton getProdutoButton() {
+	public  ProdutoButton getProdutoButton() {
 		if(produtoButton == null){
 			produtoButton = new ProdutoButton();
 			produtoButton.adddButtonListener(new TelaOpcoesListener() {
@@ -156,7 +156,7 @@ public class TelaPrincipalFrame extends JFrame{
 				
 				@Override
 				public void cadastrarPerformed() {
-					// TODO Auto-generated method stub
+					cadastrarClicked();
 					
 				}
 			});
@@ -164,14 +164,14 @@ public class TelaPrincipalFrame extends JFrame{
 		return produtoButton;
 	}
 	
-	private RelatorioPanel getRelatorioPanel() {
+	public  RelatorioPanel getRelatorioPanel() {
 		if(relatorioPanel == null){
 			relatorioPanel = new RelatorioPanel();
 		}
 		return relatorioPanel;
 	}
 
-	private RelatorioButton getRelatorioButton() {
+	public  RelatorioButton getRelatorioButton() {
 		if(relatorioButton == null){
 			relatorioButton = new RelatorioButton();
 			relatorioButton.adddButtonListener(new RelatorioListener() {
@@ -238,7 +238,12 @@ public class TelaPrincipalFrame extends JFrame{
 	
 	/*====================== BOTÕES FUNCIONÁRIOS ==================*/
 	public void cadastrarClicked(){
-		//TODO : implementar
+		if(funcionarioButton != null){
+			controller.cadastroFuncionario();
+		}
+		if(produtoButton != null){
+			controller.cadastroProduto();
+		}
 	}
 	
 	public void editarClicked(){

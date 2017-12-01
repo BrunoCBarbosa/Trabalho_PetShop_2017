@@ -21,16 +21,17 @@ import br.edu.univas.tp4.petshop.controller.SearchController;
 public class CadastroFuncionarioFrame extends JFrame{
 	private static final long serialVersionUID = -4221091737850320808L;
 	
-	private SearchController controller;
+	private SearchController controllers;
 	
-	private CadastroPessoaPanel clientePanel;
+	private CadastroPessoaPanel cadastroFuncionarioPanel;
 	private ButtonPanelCadastro buttonPanel; 
 	
 	/*====================== CONSTRUTOR ========================*/
 
 	public CadastroFuncionarioFrame(SearchController controller){
 		super("Informações do Cliente");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		controllers = controller;
 		
 		initialize();
 		setSize(700,650);
@@ -45,14 +46,14 @@ public class CadastroFuncionarioFrame extends JFrame{
 	}
 
 	/*====================== GETTERS ================================*/
-	private CadastroPessoaPanel getFuncionarioPanel() {
-		if(clientePanel == null){
-			clientePanel = new CadastroPessoaPanel();
+	public CadastroPessoaPanel getFuncionarioPanel() {
+		if(cadastroFuncionarioPanel == null){
+			cadastroFuncionarioPanel = new CadastroPessoaPanel();
 		}
-		return clientePanel;
+		return cadastroFuncionarioPanel;
 	}
 
-	private ButtonPanelCadastro getButtonPanel() {
+	public ButtonPanelCadastro getButtonPanel() {
 		if(buttonPanel == null){
 			buttonPanel = new ButtonPanelCadastro();
 			buttonPanel.addButtonsListener(new SalvarSairButtonListener() {
@@ -72,7 +73,7 @@ public class CadastroFuncionarioFrame extends JFrame{
 	}
 	
 	public void salvarClicked(){
-		//TODO : Implementar
+		controllers.cadastrarFuncionarioClicked();
 	}
 	
 	public void cancelClicked(){

@@ -23,7 +23,8 @@ public class CadastroProdutoFrame extends JFrame{
 	/*=================== CONSTRUTOR =======================*/
 	public CadastroProdutoFrame(SearchController controller){
 		super("Cadastrar Produto");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.controller = controller;
 		
 		initialize();
 		setSize(700,600);

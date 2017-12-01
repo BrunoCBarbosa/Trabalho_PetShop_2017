@@ -1,5 +1,7 @@
 package br.edu.univas.tp4.petshop.controller;
 
+import javax.swing.JOptionPane;
+
 import br.edu.univas.tp4.petshop.frame.CadastroFuncionarioFrame;
 import br.edu.univas.tp4.petshop.frame.CadastroProdutoFrame;
 import br.edu.univas.tp4.petshop.frame.EditaFuncionarioFrame;
@@ -8,6 +10,9 @@ import br.edu.univas.tp4.petshop.frame.RelatorioProdutosFrame;
 import br.edu.univas.tp4.petshop.frame.RelatorioVendasFrame;
 import br.edu.univas.tp4.petshop.frame.TelaPrincipalFrame;
 import br.edu.univas.tp4.petshop.frame.VendasFrame;
+import br.edu.univas.tp4.petshop.model.FuncionarioException;
+import br.edu.univas.tp4.petshop.model.PessoaDAO;
+import br.edu.univas.tp4.petshop.model.PessoaTO;
 
 public class SearchController {
 	
@@ -26,5 +31,48 @@ public class SearchController {
 	
 	public void initialize(){
 		telaPrincipalFrame.setVisible(true);
+	}
+	
+	public void cadastroFuncionario(){
+		cadastroFuncionarioFrame = new CadastroFuncionarioFrame(this);
+		cadastroFuncionarioFrame.setVisible(true);
+	}
+	
+	public void editaFuncionario(){
+		editaFuncionarioFrame = new EditaFuncionarioFrame(this);
+		editaFuncionarioFrame.setVisible(true);
+	}
+	
+	public void cadastroProduto(){
+		cadastroProdutoFrame = new CadastroProdutoFrame(this);
+		cadastroProdutoFrame.setVisible(true);
+	}
+	
+	public void editaProduto(){
+		editaProdutoFrame = new EditaProdutoFrame(this);
+		editaProdutoFrame.setVisible(true);
+	}
+	
+	public void relatorioProduto(){
+		relatorioProdutosFrame = new RelatorioProdutosFrame(this);
+		relatorioProdutosFrame.setVisible(true);
+	}
+	
+	public void relatorioVendas(){
+		relatorioVendasFrame = new RelatorioVendasFrame(this);
+		relatorioVendasFrame.setVisible(true);
+	}
+	
+	public void cadastrarFuncionarioClicked(){
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		PessoaTO pessoaTO = new PessoaTO();
+		pessoaTO = cadastroFuncionarioFrame.getFuncionarioPanel().getPessoa();
+		try {
+			pessoaDAO.insertNewFuncionario(pessoaTO);
+		} catch (FuncionarioException e) {
+			System.out.println("Erro ao Cadastrar.");
+			e.printStackTrace();
+		}
+		JOptionPane.showMessageDialog(cadastroFuncionarioFrame, "Salvo com sucesso.");
 	}
 }
