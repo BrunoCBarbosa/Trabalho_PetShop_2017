@@ -41,7 +41,6 @@ public class RelatorioVendasPanel extends JPanel{
 		add(getDataLabel());
 		add(getDataText());
 		add(getPesquisarButton());
-		add(getCancelarButton());
 	
 	}
 
@@ -91,20 +90,7 @@ public class RelatorioVendasPanel extends JPanel{
 		return pesquisarButton;
 	}
 	
-	private JButton getCancelarButton(){
-		if(cancelarButton == null){
-			cancelarButton = new JButton();
-			cancelarButton.setText("Cancelar");
-			cancelarButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					cancelarClicked();
-				}
-			});
-		}
-		return cancelarButton;
-	}
+
 	
 	/*==================== LISTENERS ===========================*/
 	public void addButtonListener(PesquisarListener listener){
@@ -116,12 +102,7 @@ public class RelatorioVendasPanel extends JPanel{
 			listener.pesquisarPerformed();
 		}
 	}
-	
-	private void cancelarClicked(){
-		for(PesquisarListener listener : listeners){
-			listener.cancelarPerformed();
-		}
 	}
 	
 	
-}
+

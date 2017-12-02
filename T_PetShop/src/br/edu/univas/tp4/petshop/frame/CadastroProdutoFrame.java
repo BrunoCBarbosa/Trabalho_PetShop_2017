@@ -39,14 +39,14 @@ public class CadastroProdutoFrame extends JFrame{
 	}
 	
 	/*=================== GETTERS ================*/
-	private CadastroProdutoPanel getProdutoPanel() {
+	public CadastroProdutoPanel getProdutoPanel() {
 		if(produtoPanel == null){
 			produtoPanel = new CadastroProdutoPanel();
 		}
 		return produtoPanel;
 	}
 
-	private ButtonPanelCadastro getButtonPanel() {
+	public ButtonPanelCadastro getButtonPanel() {
 		if(buttonPanel == null){
 			buttonPanel = new ButtonPanelCadastro();
 			buttonPanel.addButtonsListener(new SalvarSairButtonListener() {
@@ -56,23 +56,15 @@ public class CadastroProdutoFrame extends JFrame{
 					salvarClicked();
 					
 				}
-				
-				@Override
-				public void cancelPerformed() {
-					cancelClicked();
-					
-				}
+			
 			});
 		}
 		return buttonPanel;
 	}
 	
-	public void salvarClicked(){
-		//TODO : Implementar
+	public void salvarClicked(){	
+		controller.cadastrarProdutoClicked();
 	}
 	
-	public void cancelClicked(){
-		//TODO:implementar
-	}
-
+	
 }

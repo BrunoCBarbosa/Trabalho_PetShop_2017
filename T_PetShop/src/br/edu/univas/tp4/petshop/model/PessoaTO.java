@@ -1,6 +1,5 @@
 package br.edu.univas.tp4.petshop.model;
 
-import java.sql.Date;
 
 public class PessoaTO {
 	private String cpf;

@@ -47,11 +47,6 @@ public class RelatorioVendasFrame extends JFrame{
 					
 				}
 				
-				@Override
-				public void cancelarPerformed() {
-					cancelarClicked();
-					
-				}
 			});
 		}
 		return relatorioPanel;

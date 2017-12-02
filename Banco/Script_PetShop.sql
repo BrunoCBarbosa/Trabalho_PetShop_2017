@@ -1,3 +1,4 @@
+/*======================= CRIAÇÃO TABELA ============================================*/
 CREATE TABLE produtos (
                 codigo NUMERIC NOT NULL,
                 Nome VARCHAR(100) NOT NULL,
@@ -18,14 +19,12 @@ CREATE TABLE produtos_vendidos (
 
 
 CREATE TABLE funcionarios (
-                cpf NUMERIC NOT NULL,
+                cpf VARCHAR(14) NOT NULL,
                 nome VARCHAR(100) NOT NULL,
                 Sexo CHAR NOT NULL,
-                dataDeNascimento DATE NOT NULL,
                 endereco VARCHAR(200) NOT NULL,
                 bairro VARCHAR(200) NOT NULL,
                 cidade VARCHAR(200) NOT NULL,
-                telefone NUMERIC NOT NULL,
                 email VARCHAR(200),
                 CONSTRAINT cpf PRIMARY KEY (cpf)
 );
@@ -33,8 +32,7 @@ CREATE TABLE funcionarios (
 
 CREATE TABLE venda (
                 nota NUMERIC NOT NULL,
-                cpf NUMERIC NOT NULL,
-                data_venda TIMESTAMP NOT NULL,
+                cpf VARCHAR(14) NOT NULL,
                 codigo NUMERIC NOT NULL,
                 CONSTRAINT venda_pk PRIMARY KEY (nota)
 );

@@ -13,6 +13,9 @@ import br.edu.univas.tp4.petshop.frame.VendasFrame;
 import br.edu.univas.tp4.petshop.model.FuncionarioException;
 import br.edu.univas.tp4.petshop.model.PessoaDAO;
 import br.edu.univas.tp4.petshop.model.PessoaTO;
+import br.edu.univas.tp4.petshop.model.ProdutoDAO;
+import br.edu.univas.tp4.petshop.model.ProdutoException;
+import br.edu.univas.tp4.petshop.model.ProdutoTO;
 
 public class SearchController {
 	
@@ -74,5 +77,19 @@ public class SearchController {
 			e.printStackTrace();
 		}
 		JOptionPane.showMessageDialog(cadastroFuncionarioFrame, "Salvo com sucesso.");
+	}
+	
+	public void cadastrarProdutoClicked(){
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		ProdutoTO produtoTO = new ProdutoTO();
+		produtoTO = cadastroProdutoFrame.getProdutoPanel().getProduto();
+		
+		try {
+			produtoDAO.insertNewProduto(produtoTO);
+		} catch (ProdutoException e) {
+			System.out.println("Erro ao Cadastrar");
+			e.printStackTrace();
+		}
+		JOptionPane.showMessageDialog(cadastroProdutoFrame, "Salvo com sucesso.");
 	}
 }

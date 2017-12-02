@@ -39,7 +39,7 @@ public class ProdutoButton extends JPanel{
 	}
 	
 	/*================== GETTERS =============================*/
-	private JButton getCadastrarButton() {
+	public JButton getCadastrarButton() {
 		if(cadastrarButton == null){
 			cadastrarButton = new JButton();
 			cadastrarButton.setPreferredSize(new Dimension(110, 30));
@@ -56,7 +56,7 @@ public class ProdutoButton extends JPanel{
 		return cadastrarButton;
 	}
 
-	private JButton getEditarButton() {
+	public JButton getEditarButton() {
 		if(editarButton == null){
 			editarButton = new JButton();
 			editarButton.setPreferredSize(new Dimension(110, 30));
@@ -73,7 +73,7 @@ public class ProdutoButton extends JPanel{
 		return editarButton;
 	}
 
-	private JButton getVoltarButton() {
+	public JButton getVoltarButton() {
 		if(voltarButton == null){
 			voltarButton = new JButton();
 			voltarButton.setPreferredSize(new Dimension(110, 30));
@@ -125,19 +125,19 @@ public class ProdutoButton extends JPanel{
 		listeners.add(listener);
 	}
 	
-	private void cadastrarClicked(){
+	public void cadastrarClicked(){
 		for(TelaOpcoesListener listener : listeners){
 			listener.cadastrarPerformed();
 		}
 	}
 	
-	private void editarClicked(){
+	public void editarClicked(){
 		for(TelaOpcoesListener listener : listeners){
-			listener.cadastrarPerformed();
+			listener.editarPerformed();
 		}
 	}
 	
-	private void voltarClicked(){
+	public void voltarClicked(){
 		for(TelaOpcoesListener listener : listeners){
 			listener.voltarPerformed();
 		}

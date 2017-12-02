@@ -2,16 +2,8 @@
 package br.edu.univas.tp4.petshop.frame;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 
-import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 
 import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
 import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
@@ -63,10 +55,6 @@ public class CadastroFuncionarioFrame extends JFrame{
 					salvarClicked();
 				}
 				
-				@Override
-				public void cancelPerformed() {
-					cancelClicked();
-				}
 			});
 		}
 		return buttonPanel;
@@ -76,7 +64,5 @@ public class CadastroFuncionarioFrame extends JFrame{
 		controllers.cadastrarFuncionarioClicked();
 	}
 	
-	public void cancelClicked(){
-		//TODO:implementar
-	}
+	
 }

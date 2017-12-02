@@ -133,7 +133,7 @@ public class FuncionarioButton extends JPanel{
 	
 	private void editarClicked(){
 		for(TelaOpcoesListener listener : listeners){
-			listener.cadastrarPerformed();
+			listener.editarPerformed();
 		}
 	}
 	

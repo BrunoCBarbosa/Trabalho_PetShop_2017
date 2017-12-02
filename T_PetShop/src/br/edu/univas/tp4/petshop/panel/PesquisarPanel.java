@@ -36,7 +36,7 @@ public class PesquisarPanel extends JPanel {
 		add(getButtonPesquisar(),getButtonPesquisarConstraints());
 	}
 	
-	private JTextField getTextPesquisar(){
+	public JTextField getTextPesquisar(){
 		if(textPesquisar == null){
 			textPesquisar = new JTextField();
 			textPesquisar.setColumns(25);
@@ -44,7 +44,7 @@ public class PesquisarPanel extends JPanel {
 		return textPesquisar;
 	}
 	
-	private JButton getButtonPesquisar(){
+	public JButton getButtonPesquisar(){
 		if(buttonPesquisar == null){
 			buttonPesquisar = new JButton();
 			buttonPesquisar.setText("Pesquisar");
@@ -60,7 +60,7 @@ public class PesquisarPanel extends JPanel {
 		return buttonPesquisar;
 	}
 	
-	private GridBagConstraints getTextPesquisarConstraints(){
+	public  GridBagConstraints getTextPesquisarConstraints(){
 		if(textPesquisarConstraints == null){
 			textPesquisarConstraints = new GridBagConstraints();
 			textPesquisarConstraints.gridx = 0;
@@ -72,7 +72,7 @@ public class PesquisarPanel extends JPanel {
 		return textPesquisarConstraints;
 	}
 	
-	private GridBagConstraints getButtonPesquisarConstraints(){
+	public  GridBagConstraints getButtonPesquisarConstraints(){
 		if(buttonPesquisaConstraints == null){
 			buttonPesquisaConstraints = new GridBagConstraints();
 			buttonPesquisaConstraints.gridx = 1;
@@ -83,11 +83,11 @@ public class PesquisarPanel extends JPanel {
 	}
 	
 	/*======================= LISTENER ========================*/
-	private void addButtonListener(PesquisarListener listener){
+	public  void addButtonListener(PesquisarListener listener){
 		listeners.add(listener);
 	}
 	
-	private void pesquisarClicked(){
+	public  void pesquisarClicked(){
 		for(PesquisarListener listener : listeners){
 			listener.pesquisarPerformed();
 		}

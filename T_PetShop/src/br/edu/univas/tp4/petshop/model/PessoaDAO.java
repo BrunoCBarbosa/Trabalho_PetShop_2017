@@ -14,7 +14,7 @@ public class PessoaDAO {
 			throws FuncionarioException{
 				String sentenca = "INSERT INTO FUNCIONARIOS"
 						+ "(CPF,NOME,SEXO,ENDERECO,BAIRRO,CIDADE,EMAIL)"
-						+ "VALUES(?,?,?,?,?,?,?,?,?)";
+						+ "VALUES(?,?,?,?,?,?,?)";
 				Connection conn = null;
 			try{
 				conn = DBUtil.openConnection();
@@ -30,6 +30,7 @@ public class PessoaDAO {
 				prepStat.setString(6, to.getCidade());
 //				prepStat.setString(7, to.getTelefone());
 				prepStat.setString(7, to.getEmail());
+				prepStat.execute();
 			}catch(Exception e){
 				throw new FuncionarioException("Erro salvando funcionario" + to.getNome(),e);
 			}finally{
@@ -63,7 +64,7 @@ public class PessoaDAO {
 				
 			}
 		}catch(SQLException e){
-			throw new FuncionarioException("Erro");
+			throw new FuncionarioException("Erro" + e);
 		}finally{
 			DBUtil.closeConnection(conn);
 		}

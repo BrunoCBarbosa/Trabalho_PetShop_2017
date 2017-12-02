@@ -25,8 +25,7 @@ public class EditaFuncionarioFrame extends JFrame{
 	//CONSTRUCTOR
 	public EditaFuncionarioFrame(SearchController controller){
 		super("Editar Funcionário");
-		this.controller = controller;
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		initialize();
 		setSize(700,650);
 		setLocationRelativeTo(null);
@@ -66,15 +65,11 @@ public class EditaFuncionarioFrame extends JFrame{
 				
 				@Override
 				public void excluirPerformed() {
-					cancelClicked();
-					
-				}
-				
-				@Override
-				public void cancelPerformed() {
 					excluirClicked();
 					
 				}
+				
+			
 			});
 		}
 		return buttonPanel;
@@ -84,11 +79,7 @@ public class EditaFuncionarioFrame extends JFrame{
 		//TODO : Implementar
 	}
 	
-	public void cancelClicked(){
-		//TODO : Implementar
-	}
-	
-	public void excluirClicked(){
+		public void excluirClicked(){
 		//TODO : Implementar
 	}
 	

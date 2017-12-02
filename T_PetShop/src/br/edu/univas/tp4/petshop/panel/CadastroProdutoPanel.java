@@ -11,6 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import br.edu.univas.tp4.petshop.model.ProdutoTO;
+
 public class CadastroProdutoPanel extends JPanel {
 
 	private static final long serialVersionUID = 2906081987222262723L;
@@ -24,10 +26,10 @@ public class CadastroProdutoPanel extends JPanel {
 	private JTextArea textDesc;
 	private JLabel labelQuant;
 	private JTextField textQuant;
-	private JLabel labelCompra;
-	private JTextField textCompra;
-	private JLabel labelVenda;
-	private JTextField textVenda;
+	private JLabel labelValorBruto;
+	private JTextField textValorBruto;
+	private JLabel labelValorVenda;
+	private JTextField textValorVenda;
 	
 	private JScrollPane scroll;
 	
@@ -39,10 +41,10 @@ public class CadastroProdutoPanel extends JPanel {
 	private GridBagConstraints textDesConstraints;
 	private GridBagConstraints labelQuantConstraints;
 	private GridBagConstraints textQuantConstraints;
-	private GridBagConstraints labelCompraConstraints;
+	private GridBagConstraints labelValorBrutoConstraints;
 	private GridBagConstraints textCompraConstraints;
-	private GridBagConstraints labelVendaConstraints;
-	private GridBagConstraints textVendaConstraints;
+	private GridBagConstraints labelValorVendaConstraints;
+	private GridBagConstraints textValorVendaConstraints;
 	
 	/*========================== CONSTRUTOR==================*/
 	public CadastroProdutoPanel(){
@@ -68,7 +70,7 @@ public class CadastroProdutoPanel extends JPanel {
 	}
 
 	/*===================== GETTERS =======================*/
-	private JLabel getLabelCod() {
+	public JLabel getLabelCod() {
 		if(labelCod == null){
 			labelCod = new JLabel();
 			labelCod.setText("Código");
@@ -76,7 +78,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelCod;
 	}
 
-	private JTextField getTextCod() {
+	public JTextField getTextCod() {
 		if(textCod == null){
 			textCod = new JTextField();
 			textCod.setColumns(20);
@@ -84,7 +86,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return textCod;
 	}
 
-	private JLabel getLabelNome() {
+	public  JLabel getLabelNome() {
 		if(labelNome == null){
 			labelNome = new JLabel();
 			labelNome.setText("Nome");
@@ -92,7 +94,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelNome;
 	}
 
-	private JTextField getTextNome() {
+	public  JTextField getTextNome() {
 		if(textNome == null){
 			textNome = new JTextField();
 			textNome.setColumns(20);
@@ -100,7 +102,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return textNome;
 	}
 
-	private JLabel getLabelDesc() {
+	public  JLabel getLabelDesc() {
 		if(labelDesc == null){
 			labelDesc = new JLabel();
 			labelDesc.setText("Descrição");
@@ -108,14 +110,14 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelDesc;
 	}
 
-	private JTextArea getTextDesc() {
+	public  JTextArea getTextDesc() {
 		if(textDesc == null){
 			textDesc = new JTextArea();
 		}
 		return textDesc;
 	}
 	
-	private JScrollPane getScrollPane(){
+	public  JScrollPane getScrollPane(){
 		if(scroll == null){
 			scroll = new JScrollPane(getTextDesc());
 			scroll.setPreferredSize(new Dimension(70, 100));
@@ -123,7 +125,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return scroll;
 	}
 
-	private JLabel getLabelQuant() {
+	public  JLabel getLabelQuant() {
 		if(labelQuant == null){
 			labelQuant= new JLabel();
 			labelQuant.setText("Quantidade");
@@ -131,7 +133,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelQuant;
 	}
 
-	private JTextField getTextQuant() {
+	public  JTextField getTextQuant() {
 		if(textQuant == null){
 			textQuant = new JTextField();
 			textQuant.setColumns(20);
@@ -139,39 +141,39 @@ public class CadastroProdutoPanel extends JPanel {
 		return textQuant;
 	}
 
-	private JLabel getLabelCompra() {
-		if(labelCompra == null){
-			labelCompra = new JLabel();
-			labelCompra.setText("Preço de Compra(R$)");
+	public  JLabel getLabelCompra() {
+		if(labelValorBruto == null){
+			labelValorBruto = new JLabel();
+			labelValorBruto.setText("Preço de Compra(R$)");
 		}
-		return labelCompra;
+		return labelValorBruto;
 	}
 
-	private JTextField getTextCompra() {
-		if(textCompra == null){
-			textCompra = new JTextField();
-			textCompra.setColumns(20);
+	public  JTextField getTextCompra() {
+		if(textValorBruto == null){
+			textValorBruto = new JTextField();
+			textValorBruto.setColumns(20);
 		}
-		return textCompra;
+		return textValorBruto;
 	}
 
-	private JLabel getLabelVenda() {
-		if(labelVenda == null){
-			labelVenda = new JLabel();
-			labelVenda.setText("Preço de Venda(R$)");
+	public  JLabel getLabelVenda() {
+		if(labelValorVenda == null){
+			labelValorVenda = new JLabel();
+			labelValorVenda.setText("Preço de Venda(R$)");
 		}
-		return labelVenda;
+		return labelValorVenda;
 	}
 
-	private JTextField getTextVenda() {
-		if(textVenda == null){
-			textVenda = new JTextField();
-			textVenda.setColumns(20);
+	public  JTextField getTextVenda() {
+		if(textValorVenda == null){
+			textValorVenda = new JTextField();
+			textValorVenda.setColumns(20);
 		}
-		return textVenda;
+		return textValorVenda;
 	}
 
-	private GridBagConstraints getLabelCodConstraints() {
+	public  GridBagConstraints getLabelCodConstraints() {
 		if(labelCodConstraints == null){
 			labelCodConstraints = new GridBagConstraints();
 			labelCodConstraints.gridx = 0;
@@ -181,7 +183,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelCodConstraints;
 	}
 
-	private GridBagConstraints getTextCodConstraints() {
+	public  GridBagConstraints getTextCodConstraints() {
 		if(textCodConstraints == null){
 			textCodConstraints = new GridBagConstraints();
 			textCodConstraints.gridx = 1;
@@ -193,7 +195,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return textCodConstraints;
 	}
 
-	private GridBagConstraints getLabelNomeConstraints() {
+	public  GridBagConstraints getLabelNomeConstraints() {
 		if(labelNomeConstraints == null){
 			labelNomeConstraints = new GridBagConstraints();
 			labelNomeConstraints.gridx = 0;
@@ -203,7 +205,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelNomeConstraints;
 	}
 
-	private GridBagConstraints getTextNomeConstraints() {
+	public  GridBagConstraints getTextNomeConstraints() {
 		if(textNomeConstraints == null){
 			textNomeConstraints = new GridBagConstraints();
 			textNomeConstraints.gridx = 1;
@@ -215,7 +217,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return textNomeConstraints;
 	}
 
-	private GridBagConstraints getLabelDescConstraints() {
+	public GridBagConstraints getLabelDescConstraints() {
 		if(labelDescConstraints == null){
 			labelDescConstraints = new GridBagConstraints();
 			labelDescConstraints.gridx = 0;
@@ -225,7 +227,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelDescConstraints;
 	}
 
-	private GridBagConstraints getTextDesConstraints() {
+	public  GridBagConstraints getTextDesConstraints() {
 		if(textDesConstraints == null){
 			textDesConstraints = new GridBagConstraints();
 			textDesConstraints.gridx = 1;
@@ -237,7 +239,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return textDesConstraints;
 	}
 
-	private GridBagConstraints getLabelQuantConstraints() {
+	public  GridBagConstraints getLabelQuantConstraints() {
 		if(labelQuantConstraints == null){
 			labelQuantConstraints = new GridBagConstraints();
 			labelQuantConstraints.gridx = 0;
@@ -247,7 +249,7 @@ public class CadastroProdutoPanel extends JPanel {
 		return labelQuantConstraints;
 	}
 
-	private GridBagConstraints getTextQuantConstraints() {
+	public  GridBagConstraints getTextQuantConstraints() {
 		if(textQuantConstraints == null){
 			textQuantConstraints  = new GridBagConstraints();
 			textQuantConstraints .gridx = 1;
@@ -259,17 +261,17 @@ public class CadastroProdutoPanel extends JPanel {
 		return textQuantConstraints ;
 	}
 
-	private GridBagConstraints getLabelCompraConstraints() {
-		if(labelCompraConstraints == null){
-			labelCompraConstraints = new GridBagConstraints();
-			labelCompraConstraints.gridx = 0;
-			labelCompraConstraints.gridy = 4;
-			labelCompraConstraints.insets = new Insets(15, 15, 15, 15);
+	public  GridBagConstraints getLabelCompraConstraints() {
+		if(labelValorBrutoConstraints == null){
+			labelValorBrutoConstraints = new GridBagConstraints();
+			labelValorBrutoConstraints.gridx = 0;
+			labelValorBrutoConstraints.gridy = 4;
+			labelValorBrutoConstraints.insets = new Insets(15, 15, 15, 15);
 		}
-		return labelCompraConstraints;
+		return labelValorBrutoConstraints;
 	}
 
-	private GridBagConstraints getTextCompraConstraints() {
+	public  GridBagConstraints getTextCompraConstraints() {
 		if(textCompraConstraints == null){
 			textCompraConstraints = new GridBagConstraints();
 			textCompraConstraints.gridx = 1;
@@ -281,25 +283,36 @@ public class CadastroProdutoPanel extends JPanel {
 		return textCompraConstraints;
 	}
 
-	private GridBagConstraints getLabelVendaConstraints() {
-		if(labelVendaConstraints == null){
-			labelVendaConstraints = new GridBagConstraints();
-			labelVendaConstraints.gridx = 0;
-			labelVendaConstraints.gridy = 5;
-			labelVendaConstraints.insets = new Insets(15, 15, 15, 15);
+	public  GridBagConstraints getLabelVendaConstraints() {
+		if(labelValorVendaConstraints == null){
+			labelValorVendaConstraints = new GridBagConstraints();
+			labelValorVendaConstraints.gridx = 0;
+			labelValorVendaConstraints.gridy = 5;
+			labelValorVendaConstraints.insets = new Insets(15, 15, 15, 15);
 		}
-		return labelVendaConstraints;
+		return labelValorVendaConstraints;
 	}
 
-	private GridBagConstraints getTextVendaConstraints() {
-		if(textVendaConstraints == null){
-			textVendaConstraints = new GridBagConstraints();
-			textVendaConstraints.gridx = 1;
-			textVendaConstraints.gridy = 5;
-			textVendaConstraints.ipadx = 100;
-			textVendaConstraints.weightx = 1.0;
+	public  GridBagConstraints getTextVendaConstraints() {
+		if(textValorVendaConstraints == null){
+			textValorVendaConstraints = new GridBagConstraints();
+			textValorVendaConstraints.gridx = 1;
+			textValorVendaConstraints.gridy = 5;
+			textValorVendaConstraints.ipadx = 100;
+			textValorVendaConstraints.weightx = 1.0;
 		}
-		return textVendaConstraints;
+		return textValorVendaConstraints;
+	}
+	
+	public ProdutoTO getProduto(){
+		ProdutoTO produto = new ProdutoTO();
+		produto.setCodigo(Integer.parseInt(getTextCod().getText()));
+		produto.setNome(getTextNome().getText());
+		produto.setDescricao(getTextDesc().getText());
+		produto.setQuantidade(Integer.parseInt(getTextQuant().getText()));
+		produto.setValorBruto(Float.parseFloat(getTextCompra().getText()));
+		produto.setValorVenda(Float.parseFloat(getTextVenda().getText()));
+		return produto;
 	}
 	
 }

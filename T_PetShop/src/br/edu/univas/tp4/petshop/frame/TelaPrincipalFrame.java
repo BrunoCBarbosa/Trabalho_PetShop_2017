@@ -40,9 +40,10 @@ public class TelaPrincipalFrame extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		initialize();
+		setSize(700,650);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setSize(700,650);
+		
 	}
 	
 	public void initialize(){
@@ -114,7 +115,7 @@ public class TelaPrincipalFrame extends JFrame{
 				
 				@Override
 				public void editarPerformed() {
-					// TODO Auto-generated method stub
+					editarClicked();
 					
 				}
 				
@@ -150,8 +151,7 @@ public class TelaPrincipalFrame extends JFrame{
 				
 				@Override
 				public void editarPerformed() {
-					// TODO Auto-generated method stub
-					
+					editarClicked();					
 				}
 				
 				@Override
@@ -184,7 +184,7 @@ public class TelaPrincipalFrame extends JFrame{
 				
 				@Override
 				public void relatorioVendaPerformed() {
-					// TODO Auto-generated method stub
+					//TODO:
 					
 				}
 				
@@ -247,7 +247,12 @@ public class TelaPrincipalFrame extends JFrame{
 	}
 	
 	public void editarClicked(){
-		//TODO : implementar
+		if(funcionarioButton != null){
+			controller.editaFuncionario();
+		}
+		if(produtoButton != null){
+			controller.editaProduto();
+		}
 	}
 	
 	public void voltarClicked(){

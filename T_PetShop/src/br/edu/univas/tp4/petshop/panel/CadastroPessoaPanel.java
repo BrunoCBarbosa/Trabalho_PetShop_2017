@@ -31,7 +31,7 @@ public class CadastroPessoaPanel extends JPanel{
 	private ButtonGroup buttonGroup;
 	private int valorRadioButton;
 	private JLabel labelCpf;
-	private JTextField textCpf;
+	private JFormattedTextField textCpf;
 /*	private JLabel labelRg;
 	private JFormattedTextField textRg;
 	private JLabel labelOrgao;
@@ -72,7 +72,7 @@ public class CadastroPessoaPanel extends JPanel{
 	private GridBagConstraints textEmailConstraints;
 	
 //	private MaskFormatter mascaraData;
-//	private MaskFormatter mascaraCpf;
+	private MaskFormatter mascaraCpf;
 //	private MaskFormatter mascaraRg;
 //	private MaskFormatter mascaraTel;
 		
@@ -218,27 +218,27 @@ public class CadastroPessoaPanel extends JPanel{
 		return labelCpf;
 	}
 
-	public JTextField getTextCpf() {
+	public JFormattedTextField getTextCpf() {
 		if(textCpf== null){
-			textCpf= new JTextField();
+			textCpf= new JFormattedTextField(getMascaraCpf());
 			textCpf.setPreferredSize(new Dimension(1, 20));
 		}
 		return textCpf;
 	}
-//	
-//	public MaskFormatter getMascaraCpf(){
-//		if(mascaraCpf == null){
-//			try{
-//			mascaraCpf = new MaskFormatter("###.###.###-##");
-//			mascaraCpf.setPlaceholderCharacter('_');
-//			}
-//			catch(ParseException excp){
-//				   System.err.println("Erro na formatação: " + excp.getMessage());
-//	               System.exit(-1);
-//			}
-//		}
-//		return mascaraCpf;
-//	}
+	
+	public MaskFormatter getMascaraCpf(){
+		if(mascaraCpf == null){
+			try{
+			mascaraCpf = new MaskFormatter("###.###.###-##");
+			mascaraCpf.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraCpf;
+	}
 
 	/*=============== RG ================
 	private JLabel getLabelRg() {

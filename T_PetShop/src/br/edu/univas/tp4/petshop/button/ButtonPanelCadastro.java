@@ -15,7 +15,6 @@ public class ButtonPanelCadastro extends JPanel{
 	private static final long serialVersionUID = 4349390655740753228L;
 	
 	private JButton salvarButton;
-	private JButton cancelButton;
 	
 	private ArrayList<SalvarSairButtonListener> listeners = new ArrayList<>();
 	
@@ -27,11 +26,10 @@ public class ButtonPanelCadastro extends JPanel{
 	/*========================= ADDS ==============================*/
 	private void initialize(){
 		add(getSalvarButton());
-		add(getCancelButoon());
 	}
 	
 	/*======================= GETTERS ============================*/
-	private JButton getSalvarButton() {
+	public JButton getSalvarButton() {
 		if (salvarButton == null){
 			salvarButton = new JButton();
 			salvarButton.setText("Salvar");
@@ -44,40 +42,21 @@ public class ButtonPanelCadastro extends JPanel{
 			});
 		}	
 		return salvarButton;
-	}
-
-	private JButton getCancelButoon() {
-		if(cancelButton == null){
-			cancelButton = new JButton();
-			cancelButton.setText("Cancelar");
-			cancelButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					cancelClicked();
-				}
-			});
 				
 		}
-		return cancelButton;
-	}
 	
 	/*=================== LISTENERS ============================*/
 	public void addButtonsListener(SalvarSairButtonListener listener){
 		listeners.add(listener);
 	}
 	
-	private void salvarClicked(){
+	public void salvarClicked(){
 		for(SalvarSairButtonListener listener : listeners){
 			listener.salvarPerformed();
 		}
 	}
 	
-	private void cancelClicked(){
-		for(SalvarSairButtonListener listener : listeners){
-			listener.cancelPerformed();
-		}
-	}
-	
-	
 }
+	
+	
+

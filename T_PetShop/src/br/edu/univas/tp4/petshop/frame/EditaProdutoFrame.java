@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import br.edu.univas.tp4.petshop.button.ButtonPanelEdicao;
 import br.edu.univas.tp4.petshop.controller.SearchController;
 import br.edu.univas.tp4.petshop.listener.EditarButtonListener;
+import br.edu.univas.tp4.petshop.listener.PesquisarListener;
 import br.edu.univas.tp4.petshop.panel.CadastroProdutoPanel;
 import br.edu.univas.tp4.petshop.panel.PesquisarPanel;
 
@@ -24,7 +25,7 @@ public class EditaProdutoFrame extends JFrame{
 	/*================= CONSTRUTOR ========================*/
 	public EditaProdutoFrame(SearchController controller){
 		super("Editar Produto");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		initialize();
 		setSize(700,600);
@@ -34,7 +35,7 @@ public class EditaProdutoFrame extends JFrame{
 	
 	/*===================== ADDS ======================*/
 	private void initialize(){
-		add(getPesquisaPanel(), BorderLayout.NORTH);
+		add(getPesquisarPanel(), BorderLayout.NORTH);
 		add(getProdutoPanel(), BorderLayout.WEST);
 		add(getButtonPanel(), BorderLayout.PAGE_END);
 	}
@@ -47,9 +48,19 @@ public class EditaProdutoFrame extends JFrame{
 		return produtoPanel;
 	}
 
-	private PesquisarPanel getPesquisaPanel() {
+	private PesquisarPanel getPesquisarPanel() {
 		if(pesquisaPanel == null){
 			pesquisaPanel = new PesquisarPanel();
+			pesquisaPanel.addButtonListener(new PesquisarListener() {
+				
+				@Override
+				public void pesquisarPerformed() {
+					// TODO Auto-generated method stub
+					
+				}
+				
+			
+			});
 		}
 		return pesquisaPanel;
 	}
@@ -71,10 +82,7 @@ public class EditaProdutoFrame extends JFrame{
 					
 				}
 				
-				@Override
-				public void cancelPerformed() {
-					cancelClicked();
-				}
+		
 			});
 		}
 		return buttonPanel;
@@ -88,7 +96,5 @@ public class EditaProdutoFrame extends JFrame{
 		//TODO : Implementar
 	}
 	
-	public void cancelClicked(){
-		//TODO : Implementar
-	}
+	
 }

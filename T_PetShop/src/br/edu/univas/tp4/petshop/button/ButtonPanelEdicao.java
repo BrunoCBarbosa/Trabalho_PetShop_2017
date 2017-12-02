@@ -26,7 +26,6 @@ public class ButtonPanelEdicao extends JPanel{
 	public void initialize(){
 		add(getSalvarButton());
 		add(getExcluirButton());
-		add(getCancelButoon());
 	}
 	
 	private JButton getSalvarButton() {
@@ -44,22 +43,6 @@ public class ButtonPanelEdicao extends JPanel{
 		return salvarButton;
 	}
 
-	private JButton getCancelButoon() {
-		if(cancelButton == null){
-			cancelButton = new JButton();
-			cancelButton.setText("Cancelar");
-			cancelButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					cancelClicked();
-				}
-			});
-				
-		}
-		return cancelButton;
-	}
-	
 	private JButton getExcluirButton() {
 		if(excluirButton == null){
 			excluirButton = new JButton();
@@ -86,11 +69,6 @@ public class ButtonPanelEdicao extends JPanel{
 		}
 	}
 	
-	private void cancelClicked(){
-		for(EditarButtonListener listener : listeners){
-			listener.cancelPerformed();
-		}
-	}
 	
 	private void excluirClicked(){
 		for(EditarButtonListener listener : listeners){
