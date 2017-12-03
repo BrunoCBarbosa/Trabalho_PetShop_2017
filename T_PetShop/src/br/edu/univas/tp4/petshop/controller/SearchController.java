@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 import br.edu.univas.tp4.petshop.frame.CadastroFuncionarioFrame;
 import br.edu.univas.tp4.petshop.frame.CadastroProdutoFrame;
-import br.edu.univas.tp4.petshop.frame.EditaFuncionarioFrame;
-import br.edu.univas.tp4.petshop.frame.EditaProdutoFrame;
+import br.edu.univas.tp4.petshop.frame.VerFuncionarioFrame;
+import br.edu.univas.tp4.petshop.frame.VerProdutoFrame;
 import br.edu.univas.tp4.petshop.frame.RelatorioProdutosFrame;
 import br.edu.univas.tp4.petshop.frame.RelatorioVendasFrame;
 import br.edu.univas.tp4.petshop.frame.TelaPrincipalFrame;
@@ -21,9 +21,9 @@ public class SearchController {
 	
 	private CadastroFuncionarioFrame cadastroFuncionarioFrame;
 	private TelaPrincipalFrame telaPrincipalFrame;
-	private EditaFuncionarioFrame editaFuncionarioFrame;
+	private VerFuncionarioFrame verFuncionarioFrame;
 	private CadastroProdutoFrame cadastroProdutoFrame;
-	private EditaProdutoFrame editaProdutoFrame;
+	private VerProdutoFrame verProdutoFrame;
 	private VendasFrame vendasFrame;
 	private RelatorioProdutosFrame relatorioProdutosFrame;
 	private RelatorioVendasFrame relatorioVendasFrame;
@@ -42,8 +42,8 @@ public class SearchController {
 	}
 	
 	public void editaFuncionario(){
-		editaFuncionarioFrame = new EditaFuncionarioFrame(this);
-		editaFuncionarioFrame.setVisible(true);
+		verFuncionarioFrame = new VerFuncionarioFrame(this);
+		verFuncionarioFrame.setVisible(true);
 	}
 	
 	public void cadastroProduto(){
@@ -52,8 +52,8 @@ public class SearchController {
 	}
 	
 	public void editaProduto(){
-		editaProdutoFrame = new EditaProdutoFrame(this);
-		editaProdutoFrame.setVisible(true);
+		verProdutoFrame = new VerProdutoFrame(this);
+		verProdutoFrame.setVisible(true);
 	}
 	
 	public void relatorioProduto(){
@@ -66,6 +66,7 @@ public class SearchController {
 		relatorioVendasFrame.setVisible(true);
 	}
 	
+	/*======================= FUNCIONARIO ===================================*/
 	public void cadastrarFuncionarioClicked(){
 		PessoaDAO pessoaDAO = new PessoaDAO();
 		PessoaTO pessoaTO = new PessoaTO();
@@ -79,6 +80,22 @@ public class SearchController {
 		JOptionPane.showMessageDialog(cadastroFuncionarioFrame, "Salvo com sucesso.");
 	}
 	
+	public void excluirFuncionarioClicked(String cpf){
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		
+		try {
+			pessoaDAO.deleteFuncionario(cpf);
+			System.out.println("Funcionário excluído");
+			JOptionPane.showMessageDialog(verFuncionarioFrame, "Funcionário excluído");
+		} catch (Exception e) {
+			System.out.println("Erro ao excluir o funcionário");
+			JOptionPane.showMessageDialog(verFuncionarioFrame, "Erro ao excluir o funcionário");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/*====================== PRODUTO ===================================*/
 	public void cadastrarProdutoClicked(){
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		ProdutoTO produtoTO = new ProdutoTO();
@@ -91,5 +108,20 @@ public class SearchController {
 			e.printStackTrace();
 		}
 		JOptionPane.showMessageDialog(cadastroProdutoFrame, "Salvo com sucesso.");
+	}
+	
+	public void excluirProdutoClicked(int codigo){
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		
+		try {
+			produtoDAO.deleteProduto(codigo);
+			System.out.println("Funcionário excluído");
+			JOptionPane.showMessageDialog(verProdutoFrame, "Produto excluído");
+		} catch (ProdutoException e) {
+			System.out.println("Erro ao excluir o funcionário");
+			JOptionPane.showMessageDialog(verProdutoFrame, "Erro ao excluir o funcionário");
+			e.printStackTrace();
+		}
+		
 	}
 }

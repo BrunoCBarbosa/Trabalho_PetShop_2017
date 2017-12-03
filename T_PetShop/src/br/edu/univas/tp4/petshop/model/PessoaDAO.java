@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class PessoaDAO {
 	
-	private Object[][] listaFuncionario;
 	
 	public void insertNewFuncionario(PessoaTO to)
 			throws FuncionarioException{
@@ -23,7 +22,7 @@ public class PessoaDAO {
 				
 				prepStat.setString(1, to.getCpf());
 				prepStat.setString(2, to.getNome());
-				prepStat.setInt(3, to.getSexo());
+				prepStat.setString(3, to.getSexo());
 				//prepStat.setString(4, to.getDataNascimento());
 				prepStat.setString(4, to.getEndereco());
 				prepStat.setString(5, to.getBairro());
@@ -38,9 +37,9 @@ public class PessoaDAO {
 			}
 	}
 	
+	
 	public ArrayList<PessoaTO> listarFuncionarios() throws FuncionarioException{
-		String sql = "SELECT CPF,NOME,SEXO,ENDERECO,BAIRRO,CIDADE,EMAIL"
-				+ "FROM FUNCIONARIOS ORDER BY 1";
+		String sql = "SELECT * FROM FUNCIONARIOS ORDER BY 1";
 		ArrayList<PessoaTO> ListaFuncionarios = new ArrayList<PessoaTO>();
 		Connection conn = null;
 		
@@ -53,7 +52,7 @@ public class PessoaDAO {
 				PessoaTO to = new PessoaTO();
 				to.setCpf(rs.getString(1));
 				to.setNome(rs.getString(2));
-				to.setSexo(rs.getInt(3));
+				to.setSexo(rs.getString(3));
 				//to.setDataNascimento(rs.getString(4));
 				to.setEndereco(rs.getString(4));
 				to.setBairro(rs.getString(5));
@@ -69,6 +68,22 @@ public class PessoaDAO {
 			DBUtil.closeConnection(conn);
 		}
 		return ListaFuncionarios;
+	}
+	
+	public void deleteFuncionario(String cpf) throws FuncionarioException{
+		String sql = "DELETE FROM FUNCIONARIOS WHERE CPF = ?";
+		Connection conn = null;
+		
+		try {
+			conn = DBUtil.openConnection();
+			PreparedStatement prep = conn.prepareStatement(sql);
+			prep.setString(1, cpf);
+			prep.execute();
+		} catch (SQLException e) {
+			throw new FuncionarioException("Erro ao excluir o funcionario de CPF: " + cpf);
+			}finally{
+				DBUtil.closeConnection(conn);
+			}
 	}
 
 }

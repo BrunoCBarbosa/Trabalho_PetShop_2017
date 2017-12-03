@@ -4,7 +4,7 @@ package br.edu.univas.tp4.petshop.model;
 public class PessoaTO {
 	private String cpf;
 	private String nome;
-	private int sexo;
+	private String sexo;
 	//private String dataNascimento;
 	private String endereco;
 	private String bairro;
@@ -24,10 +24,10 @@ public class PessoaTO {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(int sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 //	public String getDataNascimento() {

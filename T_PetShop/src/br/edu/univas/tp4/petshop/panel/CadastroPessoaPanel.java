@@ -29,7 +29,7 @@ public class CadastroPessoaPanel extends JPanel{
 	private JRadioButton buttonMasculino;
 	private JRadioButton buttonFeminino;
 	private ButtonGroup buttonGroup;
-	private int valorRadioButton;
+	private String valorRadioButton;
 	private JLabel labelCpf;
 	private JFormattedTextField textCpf;
 /*	private JLabel labelRg;
@@ -199,11 +199,11 @@ public class CadastroPessoaPanel extends JPanel{
 		return buttonGroup;
 	}
 	
-	public int getValorRadioButton(){
+	public String getValorRadioButton(){
 		if(getButtonMasculino().isSelected()){
-			valorRadioButton = 1;
+			valorRadioButton = "M";
 		}else{
-			valorRadioButton = 2;
+			valorRadioButton = "F";
 		}
 		return valorRadioButton;
 	}
