@@ -5,10 +5,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -23,8 +26,8 @@ public class CadastroPessoaPanel extends JPanel{
 	
 	private JLabel labelNome;
 	private JTextField textNome;
-//	private JLabel labelNascimento;
-//	private JFormattedTextField textNascimento;
+	private JLabel labelNascimento;
+	private JFormattedTextField textNascimento;
 	private JLabel labelSexo;
 	private JRadioButton buttonMasculino;
 	private JRadioButton buttonFeminino;
@@ -49,8 +52,8 @@ public class CadastroPessoaPanel extends JPanel{
 	
 	private GridBagConstraints labelNomeConstraints;
 	private GridBagConstraints textNomeConstraints;
-//	private GridBagConstraints labelNascimentoConstraints;
-//	private GridBagConstraints textNascimentoConstraints;
+	private GridBagConstraints labelNascimentoConstraints;
+	private GridBagConstraints textNascimentoConstraints;
 	private GridBagConstraints labelSexoConstraints;
 	private GridBagConstraints masculinoConstraints;
 	private GridBagConstraints femininoConstraints;
@@ -71,7 +74,7 @@ public class CadastroPessoaPanel extends JPanel{
 	private GridBagConstraints labelEmailConstraints;
 	private GridBagConstraints textEmailConstraints;
 	
-//	private MaskFormatter mascaraData;
+	private MaskFormatter mascaraData;
 	private MaskFormatter mascaraCpf;
 //	private MaskFormatter mascaraRg;
 //	private MaskFormatter mascaraTel;
@@ -83,15 +86,15 @@ public class CadastroPessoaPanel extends JPanel{
 	private void initialize(){
 		setLayout(new GridBagLayout());
 //		getButtonGroup();
-//	//	getMascaraData();
+		getMascaraData();
 //		getMascaraCpf();
 //	//	getMascaraRG();
 //		getMascaraTel();
 		
 		add(getLabelNome(),getLabelNomeConstraints());
 		add(getTextNome(),getTextNomeConstraints());
-//		add(getLabelNascimento(),getLabelNascimentoConstraints());
-//		add(getTextNascimento(),getTextNascimentoConstraints());
+		add(getLabelNascimento(),getLabelNascimentoConstraints());
+		add(getTextNascimento(),getTextNascimentoConstraints());
 		add(getLabelSexo(),getLabelSexoConstraints());
 		add(getButtonMasculino(),getMasculinoConstraints());
 		add(getButtonFeminino(),getFemininoConstraints());
@@ -131,37 +134,37 @@ public class CadastroPessoaPanel extends JPanel{
 		return textNome;
 	}
 	
-//	/*=============== DATA DE NASCIMENTO ================*/
-//	public JLabel getLabelNascimento() {
-//		if(labelNascimento== null){
-//			labelNascimento = new JLabel();
-//			labelNascimento.setText("Data de Nascimento");
-//		}
-//		return labelNascimento;
-//	}
-//
-//	public JFormattedTextField getTextNascimento() {
-//		if(textNascimento == null){
-//			textNascimento = new JFormattedTextField(mascaraData);
-//			textNascimento.setPreferredSize(new Dimension(1, 20));
-//			
-//		}
-//		return textNascimento;
-//	}
-//	
-//	public MaskFormatter getMascaraData(){
-//		if(mascaraData == null){
-//			try{
-//			mascaraData = new MaskFormatter("##/##/####");
-//			mascaraData.setPlaceholderCharacter('_');
-//			}
-//			catch(ParseException excp){
-//				   System.err.println("Erro na formatação: " + excp.getMessage());
-//	               System.exit(-1);
-//			}
-//		}
-//		return mascaraData;
-//	}
+	/*=============== DATA DE NASCIMENTO ================*/
+	public JLabel getLabelNascimento() {
+		if(labelNascimento== null){
+			labelNascimento = new JLabel();
+			labelNascimento.setText("Data de Nascimento");
+		}
+		return labelNascimento;
+	}
+
+	public JFormattedTextField getTextNascimento() {
+		if(textNascimento == null){
+			textNascimento = new JFormattedTextField(mascaraData);
+			textNascimento.setPreferredSize(new Dimension(1, 20));
+			
+		}
+		return textNascimento;
+	}
+	
+	public MaskFormatter getMascaraData(){
+		if(mascaraData == null){
+			try{
+			mascaraData = new MaskFormatter("##/##/####");
+			mascaraData.setPlaceholderCharacter('_');
+			}
+			catch(ParseException excp){
+				   System.err.println("Erro na formatação: " + excp.getMessage());
+	               System.exit(-1);
+			}
+		}
+		return mascaraData;
+	}
 	
 
 	/*=============== Sexo ================*/
@@ -412,26 +415,26 @@ public class CadastroPessoaPanel extends JPanel{
 		return textNomeConstraints;
 	}
 
-//	public GridBagConstraints getLabelNascimentoConstraints() {
-//		if(labelNascimentoConstraints == null){
-//			labelNascimentoConstraints = new GridBagConstraints();
-//			labelNascimentoConstraints.gridx = 0;
-//			labelNascimentoConstraints.gridy = 1;
-//			labelNascimentoConstraints.insets = new Insets(15, 15, 15, 15);
-//		}
-//		return labelNascimentoConstraints;
-//	}
-//
-//	public GridBagConstraints getTextNascimentoConstraints() {
-//		if(textNascimentoConstraints == null){
-//			textNascimentoConstraints = new GridBagConstraints();
-//			textNascimentoConstraints.gridx = 1;
-//			textNascimentoConstraints.gridy = 1;
-//			textNascimentoConstraints.ipadx = 100;
-//			textNascimentoConstraints.insets = new Insets(15, -95, 15, 15);
-//		}
-//		return textNascimentoConstraints;
-//	}
+	public GridBagConstraints getLabelNascimentoConstraints() {
+		if(labelNascimentoConstraints == null){
+			labelNascimentoConstraints = new GridBagConstraints();
+			labelNascimentoConstraints.gridx = 0;
+			labelNascimentoConstraints.gridy = 1;
+			labelNascimentoConstraints.insets = new Insets(15, 15, 15, 15);
+		}
+		return labelNascimentoConstraints;
+	}
+
+	public GridBagConstraints getTextNascimentoConstraints() {
+		if(textNascimentoConstraints == null){
+			textNascimentoConstraints = new GridBagConstraints();
+			textNascimentoConstraints.gridx = 1;
+			textNascimentoConstraints.gridy = 1;
+			textNascimentoConstraints.ipadx = 100;
+			textNascimentoConstraints.insets = new Insets(15, -95, 15, 15);
+		}
+		return textNascimentoConstraints;
+	}
 
 	public GridBagConstraints getLabelSexoConstraints() {
 		if(labelSexoConstraints == null){
@@ -643,7 +646,7 @@ public class CadastroPessoaPanel extends JPanel{
 		PessoaTO pessoa = new PessoaTO();
 		pessoa.setCpf(getTextCpf().getText());
 		pessoa.setNome(getTextNome().getText());
-		//pessoa.setDataNascimento(getTextNascimento().getText());
+	//	pessoa.setNascimento(getTextNascimento().getText().toString());
 		pessoa.setSexo(getValorRadioButton());
 		pessoa.setEndereco(getTextEndereco().getText());
 		pessoa.setBairro(getTextBairro().getText());
@@ -652,6 +655,7 @@ public class CadastroPessoaPanel extends JPanel{
 		pessoa.setEmail(getTextEmail().getText());
 		return pessoa;
 	}
-
+	
+	
 	
 }

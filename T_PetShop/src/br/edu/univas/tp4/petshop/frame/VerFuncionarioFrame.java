@@ -3,11 +3,14 @@ package br.edu.univas.tp4.petshop.frame;
 import java.awt.BorderLayout;
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import br.edu.univas.tp4.petshop.listener.ExcluirButtonListener;
+import br.edu.univas.tp4.petshop.model.PessoaDAO;
+import br.edu.univas.tp4.petshop.model.PessoaTO;
 import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
 import br.edu.univas.tp4.petshop.panel.PesquisarPanel;
 import br.edu.univas.tp4.petshop.panel.VerFuncionarioPanel;
@@ -28,6 +31,8 @@ public class VerFuncionarioFrame extends JFrame{
 	public VerFuncionarioFrame(SearchController controller){
 		super("Lista de Funcionários");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		controllers = controller;
+		
 		initialize();
 		setSize(700,650);
 		setLocationRelativeTo(null);
@@ -76,12 +81,18 @@ public class VerFuncionarioFrame extends JFrame{
 	public void excluirClicked(){
 		int linha = verPanel.getTableFuncionario().getSelectedRow();
 		if(linha == -1){
-			JOptionPane.showMessageDialog(this, "Nenhum Item Selecionado");
+			JOptionPane.showMessageDialog(this, "Nenhum Item Selecionado","ERRO", JOptionPane.ERROR_MESSAGE);
 		}else{
 			Object valor = verPanel.getTableFuncionario().getValueAt(linha, 0);
 			String valorString = (String)valor;
 			controllers.excluirFuncionarioClicked(valorString);
+			getVerPanel().removeAll();
+			getVerPanel().revalidate();
+			verPanel = null;
+			add(getVerPanel(), BorderLayout.CENTER);
 		}
+		
+		
 	}
 	
 }

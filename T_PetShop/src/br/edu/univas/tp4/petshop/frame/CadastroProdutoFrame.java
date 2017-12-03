@@ -5,6 +5,7 @@ import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
 import br.edu.univas.tp4.petshop.panel.CadastroProdutoPanel;
@@ -63,7 +64,13 @@ public class CadastroProdutoFrame extends JFrame{
 	}
 	
 	public void salvarClicked(){	
+		if(produtoPanel.getTextCod().getText().length() == 0 || produtoPanel.getTextNome().getText().length() == 0 || produtoPanel.getTextQuant().getText().length() == 0 ||
+				produtoPanel.getTextVenda().getText().length() == 0 || produtoPanel.getTextCompra().getText().length() == 0){
+				JOptionPane.showMessageDialog(this, "Campo Vazio","ERRO", JOptionPane.ERROR_MESSAGE);
+		}
 		controller.cadastrarProdutoClicked();
+		dispose();
+		
 	}
 	
 	

@@ -1,5 +1,7 @@
 package br.edu.univas.tp4.petshop.controller;
 
+import java.text.SimpleDateFormat;
+
 import javax.swing.JOptionPane;
 
 import br.edu.univas.tp4.petshop.frame.CadastroFuncionarioFrame;
@@ -82,7 +84,6 @@ public class SearchController {
 	
 	public void excluirFuncionarioClicked(String cpf){
 		PessoaDAO pessoaDAO = new PessoaDAO();
-		
 		try {
 			pessoaDAO.deleteFuncionario(cpf);
 			System.out.println("Funcionário excluído");
@@ -100,7 +101,6 @@ public class SearchController {
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		ProdutoTO produtoTO = new ProdutoTO();
 		produtoTO = cadastroProdutoFrame.getProdutoPanel().getProduto();
-		
 		try {
 			produtoDAO.insertNewProduto(produtoTO);
 		} catch (ProdutoException e) {
@@ -108,6 +108,7 @@ public class SearchController {
 			e.printStackTrace();
 		}
 		JOptionPane.showMessageDialog(cadastroProdutoFrame, "Salvo com sucesso.");
+		
 	}
 	
 	public void excluirProdutoClicked(int codigo){
@@ -115,7 +116,7 @@ public class SearchController {
 		
 		try {
 			produtoDAO.deleteProduto(codigo);
-			System.out.println("Funcionário excluído");
+			System.out.println("Produto excluído");
 			JOptionPane.showMessageDialog(verProdutoFrame, "Produto excluído");
 		} catch (ProdutoException e) {
 			System.out.println("Erro ao excluir o funcionário");

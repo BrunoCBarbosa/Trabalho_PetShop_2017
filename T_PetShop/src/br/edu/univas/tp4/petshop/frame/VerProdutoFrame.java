@@ -28,6 +28,7 @@ public class VerProdutoFrame extends JFrame{
 	public VerProdutoFrame(SearchController controller){
 		super("Editar Produto");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		controllers = controller;
 		
 		initialize();
 		setSize(700,600);
@@ -89,11 +90,15 @@ public class VerProdutoFrame extends JFrame{
 	public void excluirClicked(){
 		int linha = verPanel.getTableProduto().getSelectedRow();
 		if(linha == -1){
-			JOptionPane.showMessageDialog(this, "Nenhum Item Selecionado");
-		}else{
+			JOptionPane.showMessageDialog(this, "Nenhum Item Selecionado","ERRO", JOptionPane.ERROR_MESSAGE);
+			}else{
 			Object valor = verPanel.getTableProduto().getValueAt(linha, 0);
 			int valorInt = (int)valor;
 			controllers.excluirProdutoClicked(valorInt);
+			getVerPanel().removeAll();
+			getVerPanel().revalidate();
+			verPanel = null;
+			add(getVerPanel(), BorderLayout.CENTER);
 		}
 	}
 	

@@ -4,6 +4,9 @@ package br.edu.univas.tp4.petshop.frame;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMessages_zh_TW;
 
 import br.edu.univas.tp4.petshop.listener.SalvarSairButtonListener;
 import br.edu.univas.tp4.petshop.panel.CadastroPessoaPanel;
@@ -61,7 +64,13 @@ public class CadastroFuncionarioFrame extends JFrame{
 	}
 	
 	public void salvarClicked(){
-		controllers.cadastrarFuncionarioClicked();
+		if(cadastroFuncionarioPanel.getTextNome().getText().length() == 0 || cadastroFuncionarioPanel.getTextCpf().getText().length() == 0 || cadastroFuncionarioPanel.getTextEndereco().getText().length() == 0 ||
+				cadastroFuncionarioPanel.getTextBairro().getText().length() == 0 || cadastroFuncionarioPanel.getTextCidade().getText().length() == 0 || cadastroFuncionarioPanel.getTextEmail().getText().length() == 0){
+			JOptionPane.showMessageDialog(this, "Campo Vazio","ERRO", JOptionPane.ERROR_MESSAGE);
+		}else{
+			controllers.cadastrarFuncionarioClicked();
+			dispose();
+		}
 	}
 	
 	
