@@ -23,11 +23,9 @@ public class PessoaDAO {
 				prepStat.setString(1, to.getCpf());
 				prepStat.setString(2, to.getNome());
 				prepStat.setString(3, to.getSexo());
-				//prepStat.setString(4, to.getDataNascimento());
 				prepStat.setString(4, to.getEndereco());
 				prepStat.setString(5, to.getBairro());
 				prepStat.setString(6, to.getCidade());
-//				prepStat.setString(7, to.getTelefone());
 				prepStat.setString(7, to.getEmail());
 				prepStat.execute();
 			}catch(Exception e){

@@ -26,7 +26,6 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 	
 	private GridBagConstraints clienteButtonConstraints;
 	private GridBagConstraints estoqueButtonConstraints;
-	private GridBagConstraints relatorioButtonConstraints;
 	private GridBagConstraints sairButtonConstraints;
 
 	
@@ -42,7 +41,6 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 		
 		add(getClientesButton(),getClienteButtonConstraints());
 		add(getEstoqueButton(),getEstoqueButtonConstraints());
-		add(getRelatorioButton(),getRelatorioButtonConstraints());
 		add(getSairButton(),getSairButtonConstraints());
 	}
 	
@@ -78,22 +76,6 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 			});
 		}
 		return estoqueButton;
-	}
-
-	private JButton getRelatorioButton() {
-		if(relatorioButton == null){
-			relatorioButton = new JButton();
-			relatorioButton.setPreferredSize(new Dimension(110, 30));
-			relatorioButton.setText("Relatórios");
-			relatorioButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					relatorioClicked();					
-				}
-			});
-		}
-		return relatorioButton;
 	}
 
 	private JButton getSairButton() {
@@ -134,15 +116,6 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 		return estoqueButtonConstraints;
 	}
 
-	private GridBagConstraints getRelatorioButtonConstraints() {
-		if(relatorioButtonConstraints == null){
-			relatorioButtonConstraints = new GridBagConstraints();
-			relatorioButtonConstraints.gridx = 0;
-			relatorioButtonConstraints.gridy = 2;
-			relatorioButtonConstraints.insets = new Insets(5, 5, 5, 5);
-		}
-		return relatorioButtonConstraints;
-	}
 
 	private GridBagConstraints getSairButtonConstraints() {
 		if(sairButtonConstraints == null){
@@ -169,12 +142,6 @@ public class ButtonPanelTelaPrincipal extends JPanel{
 			listener.produtoPerformed();
 		}
 	}
-	
-	public void relatorioClicked(){
-		for(PrincipalButtonListener listener : listeners){
-			listener.relatorioPerformed();
-		}
-	}	
 		
 	public void sairClicked(){
 		for(PrincipalButtonListener listener : listeners){

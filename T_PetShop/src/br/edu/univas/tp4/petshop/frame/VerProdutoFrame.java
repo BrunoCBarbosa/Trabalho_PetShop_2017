@@ -11,7 +11,6 @@ import br.edu.univas.tp4.petshop.controller.SearchController;
 import br.edu.univas.tp4.petshop.listener.ExcluirButtonListener;
 import br.edu.univas.tp4.petshop.listener.PesquisarListener;
 import br.edu.univas.tp4.petshop.panel.CadastroProdutoPanel;
-import br.edu.univas.tp4.petshop.panel.PesquisarPanel;
 import br.edu.univas.tp4.petshop.panel.VerProdutoPanel;
 
 public class VerProdutoFrame extends JFrame{
@@ -42,24 +41,6 @@ public class VerProdutoFrame extends JFrame{
 		add(getVerPanel(), BorderLayout.CENTER);
 		add(getButtonPanel(), BorderLayout.PAGE_END);
 	}
-	
-	/*===================== GETTERS =====================*/
-//	private PesquisarPanel getPesquisarPanel() {
-//		if(pesquisaPanel == null){
-//			pesquisaPanel = new PesquisarPanel();
-//			pesquisaPanel.addButtonListener(new PesquisarListener() {
-//				
-//				@Override
-//				public void pesquisarPerformed() {
-//					// TODO Auto-generated method stub
-//					
-//				}
-//				
-//			
-//			});
-//		}
-//		return pesquisaPanel;
-//	}
 	
 
 	public VerProdutoPanel getVerPanel() {

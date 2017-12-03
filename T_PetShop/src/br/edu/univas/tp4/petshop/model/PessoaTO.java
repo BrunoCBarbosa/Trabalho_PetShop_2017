@@ -5,11 +5,9 @@ public class PessoaTO {
 	private String cpf;
 	private String nome;
 	private String sexo;
-	//private String dataNascimento;
 	private String endereco;
 	private String bairro;
 	private String cidade;
-	//private String telefone;
 	private String email;
 	
 	public String getCpf() {
@@ -30,12 +28,6 @@ public class PessoaTO {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-//	public String getDataNascimento() {
-//		return dataNascimento;
-//	}
-//	public void setDataNascimento(String string) {
-//		this.dataNascimento = string;
-//	}
 	public String getEndereco() {
 		return endereco;
 	}
@@ -54,12 +46,6 @@ public class PessoaTO {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-//	public String getTelefone() {
-//		return telefone;
-//	}
-//	public void setTelefone(String telefone) {
-//		this.telefone = telefone;
-//	}
 	public String getEmail() {
 		return email;
 	}

@@ -9,8 +9,6 @@ import br.edu.univas.tp4.petshop.listener.PrincipalButtonListener;
 import br.edu.univas.tp4.petshop.listener.RelatorioListener;
 import br.edu.univas.tp4.petshop.listener.TelaOpcoesListener;
 import br.edu.univas.tp4.petshop.panel.ProdutoPanel;
-import br.edu.univas.tp4.petshop.panel.RelatorioPanel;
-import br.edu.univas.tp4.petshop.panel.RelatorioProdutosPanel;
 import br.edu.univas.tp4.petshop.panel.FuncionarioPanel;
 import br.edu.univas.tp4.petshop.panel.TelaPrincipalPanel;
 import br.edu.univas.tp4.petshop.button.ButtonPanelTelaPrincipal;
@@ -31,7 +29,6 @@ public class TelaPrincipalFrame extends JFrame{
 	private FuncionarioButton funcionarioButton;
 	private ProdutoPanel produtoPanel;
 	private ProdutoButton produtoButton;
-	private RelatorioPanel relatorioPanel;
 	private RelatorioButton relatorioButton;
 
 	public TelaPrincipalFrame(SearchController controller){
@@ -68,12 +65,6 @@ public class TelaPrincipalFrame extends JFrame{
 				@Override
 				public void sairPerformed() {
 					sairClicked();
-					
-				}
-				
-				@Override
-				public void relatorioPerformed() {
-					relatorioClicked();
 					
 				}
 				
@@ -164,40 +155,6 @@ public class TelaPrincipalFrame extends JFrame{
 		return produtoButton;
 	}
 	
-	public  RelatorioPanel getRelatorioPanel() {
-		if(relatorioPanel == null){
-			relatorioPanel = new RelatorioPanel();
-		}
-		return relatorioPanel;
-	}
-
-	public  RelatorioButton getRelatorioButton() {
-		if(relatorioButton == null){
-			relatorioButton = new RelatorioButton();
-			relatorioButton.adddButtonListener(new RelatorioListener() {
-				
-				@Override
-				public void voltarPerformed() {
-					voltarClicked();
-					
-				}
-				
-				@Override
-				public void relatorioVendaPerformed() {
-					//TODO:
-					
-				}
-				
-				@Override
-				public void relatorioProdutoPerformed() {
-					// TODO Auto-generated method stub
-					
-				}
-			});
-		}
-		return relatorioButton;
-	}
-	
 	/*====================== CLICKED ===========================*/
 	public void funcionarioClicked(){
 		getPrincipalPanel().removeAll();
@@ -221,17 +178,6 @@ public class TelaPrincipalFrame extends JFrame{
 		add(getProdutoButton(),BorderLayout.CENTER);
 	}
 	
-	public void relatorioClicked(){
-		getPrincipalPanel().removeAll();
-		getPrincipalPanel().revalidate();
-		getButtonPrincipal().removeAll();
-		getButtonPrincipal().revalidate();
-		principalPanel= null;
-		buttonPrincipal = null;
-		add(getRelatorioPanel(),BorderLayout.NORTH);
-		add(getRelatorioButton(),BorderLayout.CENTER);
-	}	
-		
 	public void sairClicked(){
 		System.exit(0);
 	}
@@ -264,12 +210,7 @@ public class TelaPrincipalFrame extends JFrame{
 		getProdutoPanel().revalidate();
 		getProdutoButton().removeAll();
 		getProdutoButton().revalidate();
-		getRelatorioPanel().removeAll();
-		getRelatorioPanel().revalidate();
-		getRelatorioButton().removeAll();
-		getRelatorioButton().revalidate();
-		relatorioPanel = null;
-		relatorioButton = null;
+			relatorioButton = null;
 		funcionarioPanel= null;
 		funcionarioButton= null;
 		produtoPanel = null;

@@ -86,65 +86,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB20" populated="true" UUID="6ddf3892-3278-49b3-8aad-3eb6091f737d" name="venda" objectType="TABLE" physicalName="venda" >
-   <remarks></remarks>
-   <folder id="FOLTAB201" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL21" populated="true" UUID="5a1e8605-b03a-47fa-87a7-8fdbc8555d81" autoIncrement="false" autoIncrementSequenceName="venda_nota_seq" defaultValue="" name="nota" nullable="0" physicalName="nota" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL22" populated="true" UUID="99917109-9e6e-4dea-b6f9-bbeff7d317f4" autoIncrement="false" autoIncrementSequenceName="funcionarios_cpf_seq_1" defaultValue="" name="cpf" nullable="0" physicalName="cpf" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL23" populated="true" UUID="5d819f04-ae79-44ca-974d-b200b9c4bf2b" autoIncrement="false" autoIncrementSequenceName="venda_data_venda_seq" defaultValue="" name="data_venda" nullable="0" physicalName="data_venda" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
-     <remarks></remarks>
-    </column>
-    <column id="COL24" populated="true" UUID="6126b8d6-9a27-4770-a106-cb5d376818ab" autoIncrement="false" autoIncrementSequenceName="produtos_codigo_seq_1" defaultValue="" name="codigo" nullable="0" physicalName="codigo" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
-     <remarks></remarks>
-    </column>
-    </folder>
-    <folder id="FOLTAB203" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
-    </folder>
-    <folder id="FOLTAB202" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
-    </folder>
-    <folder id="FOLTAB204" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX25" populated="true" UUID="9386af3e-0031-4f15-838a-272cc9a1a21e" clustered="false" name="venda_pk" physicalName="venda_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC26" populated="true" UUID="c89fadb3-562b-445a-846f-2a0f638b36e6" ascendingOrDescending="UNSPECIFIED" column-ref="COL21" name="nota" physicalName="nota" />
-    </index>
-   </folder>
-  </table>
-  <table id="TAB27" populated="true" UUID="333be135-655d-4bbd-89cb-0bd15971db69" name="produtos_vendidos" objectType="TABLE" physicalName="produtos_vendidos" >
-   <remarks></remarks>
-   <folder id="FOLTAB271" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL28" populated="true" UUID="fa01b428-9b7d-4f19-a320-0a4a2f392328" autoIncrement="false" autoIncrementSequenceName="produtos_codigo_seq_2" defaultValue="" name="codigo" nullable="0" physicalName="codigo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL29" populated="true" UUID="21820f70-7ea7-4fa2-849f-1a8bf7fe98a9" autoIncrement="false" autoIncrementSequenceName="produtos_vendidos_preco_vendido_seq" defaultValue="" name="preco_vendido" nullable="0" physicalName="preco_vendido" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL30" populated="true" UUID="d8195c60-1634-48eb-af4f-5d4f5928d7e0" autoIncrement="false" autoIncrementSequenceName="produtos_vendidos_quantidade_vendida_seq" defaultValue="" name="quantidade_vendida" nullable="0" physicalName="quantidade_vendida" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
-     <remarks></remarks>
-    </column>
-    </folder>
-    <folder id="FOLTAB273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
-    </folder>
-    <folder id="FOLTAB272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
-    </folder>
-    <folder id="FOLTAB274" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX31" populated="true" UUID="58cd9b05-a210-444e-a654-bae8da659843" clustered="false" name="produtos_vendidos_pk" physicalName="produtos_vendidos_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC32" populated="true" UUID="a641361f-9d14-4062-b7cf-8a603c378f67" ascendingOrDescending="UNSPECIFIED" column-ref="COL28" name="codigo" physicalName="codigo" />
-    </index>
-   </folder>
-  </table>
   <relationships>
-   <relationship id="REL33" populated="true" UUID="47727462-e017-446d-b5bb-5297d3238fc0" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="funcionarios_venda_fk" physicalName="funcionarios_venda_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP34" populated="true" UUID="49b3b29f-038f-4042-a855-e8c696c46762" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
-   </relationship>
-   <relationship id="REL35" populated="true" UUID="5a966a45-ae78-473e-9689-4a2f3ebca695" deferrability="7" deleteRule="3" fk-table-ref="TAB27" fkCardinality="7" identifying="false" name="produtos_produtos_vendidos_fk" physicalName="produtos_produtos_vendidos_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP36" populated="true" UUID="579fd9f7-f4af-497f-bb63-35fc39799dbb" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL12" />
-   </relationship>
-   <relationship id="REL37" populated="true" UUID="a22c5a38-863e-49b1-b567-5057575261fe" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="false" name="produtos_vendidos_venda_fk" physicalName="produtos_vendidos_venda_fk" pk-table-ref="TAB27" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP38" populated="true" UUID="998cdf4c-05e4-4b16-b495-255d378808a1" fk-column-ref="COL24" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL28" />
-   </relationship>
   </relationships>
  </target-database>
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
@@ -152,12 +94,7 @@
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="80" y="28" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB11" x="830" y="73" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB20" x="488" y="62" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB27" x="495" y="289" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL33" pkConnection="0.5257142857142857" fkConnection="0.43037974683544306" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL35" pkConnection="0.5590551181102362" fkConnection="0.3191489361702128" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL37" pkConnection="0.4859437751004016" fkConnection="0.5137614678899083" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-pane table-ref="TAB11" x="420" y="48" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

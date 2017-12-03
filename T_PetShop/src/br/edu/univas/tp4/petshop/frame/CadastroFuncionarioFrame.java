@@ -68,8 +68,8 @@ public class CadastroFuncionarioFrame extends JFrame{
 				cadastroFuncionarioPanel.getTextBairro().getText().length() == 0 || cadastroFuncionarioPanel.getTextCidade().getText().length() == 0 || cadastroFuncionarioPanel.getTextEmail().getText().length() == 0){
 			JOptionPane.showMessageDialog(this, "Campo Vazio","ERRO", JOptionPane.ERROR_MESSAGE);
 		}else{
-			controllers.cadastrarFuncionarioClicked();
-			dispose();
+		controllers.cadastrarFuncionarioClicked();
+		dispose();
 		}
 	}
 	

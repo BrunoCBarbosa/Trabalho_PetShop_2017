@@ -8,10 +8,7 @@ import br.edu.univas.tp4.petshop.frame.CadastroFuncionarioFrame;
 import br.edu.univas.tp4.petshop.frame.CadastroProdutoFrame;
 import br.edu.univas.tp4.petshop.frame.VerFuncionarioFrame;
 import br.edu.univas.tp4.petshop.frame.VerProdutoFrame;
-import br.edu.univas.tp4.petshop.frame.RelatorioProdutosFrame;
-import br.edu.univas.tp4.petshop.frame.RelatorioVendasFrame;
 import br.edu.univas.tp4.petshop.frame.TelaPrincipalFrame;
-import br.edu.univas.tp4.petshop.frame.VendasFrame;
 import br.edu.univas.tp4.petshop.model.FuncionarioException;
 import br.edu.univas.tp4.petshop.model.PessoaDAO;
 import br.edu.univas.tp4.petshop.model.PessoaTO;
@@ -26,9 +23,6 @@ public class SearchController {
 	private VerFuncionarioFrame verFuncionarioFrame;
 	private CadastroProdutoFrame cadastroProdutoFrame;
 	private VerProdutoFrame verProdutoFrame;
-	private VendasFrame vendasFrame;
-	private RelatorioProdutosFrame relatorioProdutosFrame;
-	private RelatorioVendasFrame relatorioVendasFrame;
 	
 	public SearchController(){
 		telaPrincipalFrame = new TelaPrincipalFrame(this);
@@ -58,16 +52,7 @@ public class SearchController {
 		verProdutoFrame.setVisible(true);
 	}
 	
-	public void relatorioProduto(){
-		relatorioProdutosFrame = new RelatorioProdutosFrame(this);
-		relatorioProdutosFrame.setVisible(true);
-	}
-	
-	public void relatorioVendas(){
-		relatorioVendasFrame = new RelatorioVendasFrame(this);
-		relatorioVendasFrame.setVisible(true);
-	}
-	
+
 	/*======================= FUNCIONARIO ===================================*/
 	public void cadastrarFuncionarioClicked(){
 		PessoaDAO pessoaDAO = new PessoaDAO();
