@@ -60,7 +60,7 @@ public class FuncionarioButton extends JPanel{
 		if(editarButton == null){
 			editarButton = new JButton();
 			editarButton.setPreferredSize(new Dimension(110, 30));
-			editarButton.setText("Editar");
+			editarButton.setText("Relatório");
 			editarButton.addActionListener(new ActionListener() {
 				
 				@Override
